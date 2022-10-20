@@ -1,0 +1,58 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.Flex-Container{
+    display: flex;
+    background-color: dodgerblue;
+    width: 800px;
+    height: 1000px;
+    /* justify-content: center; */
+    margin: 40px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.orange{
+    /* width: 150px; */
+    height: 150px;
+    background-color: orange;
+    flex-basis: 92%;
+    margin: 25px;
+    align-items: flex-start;
+    justify-content: center;
+}
+.gris{
+    
+    height: 400px;
+    background-color: gray;
+    flex-basis: 22%;
+
+}
+.jaune{
+    
+    height: 90px;
+    background-color: yellow;
+    flex-basis: 63%;
+} 
+.bleu{
+    height: 90px;
+    background-color: blue;
+    flex-basis: 63%; 
+ }
+.vert{
+    width: 150px;
+    height: 150px;
+    background-color: greenyellow;
+    flex-basis: 90%;
+    margin: 25px;
+    align-content: flex-end;
+    align-items: stretch;
+
+}
+.concombre{
+    height: 90px;
+    background-color: lightgreen;
+    flex-basis: 63%;
+}
+
