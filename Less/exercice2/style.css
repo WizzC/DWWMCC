@@ -1,0 +1,61 @@
+main {
+  background-color: #3c3cf8;
+  width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+.container1 {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  align-items: stretch;
+}
+.container1 :nth-of-type(1) {
+  background-color: orange;
+  flex: 1;
+  margin: 10px 20px;
+}
+.container1 :nth-of-type(2) {
+  background-color: gray;
+  flex: 1;
+  margin: 10px 20px;
+}
+.jaune {
+  background-color: yellow;
+  height: 150px;
+  margin: 40px 10px 20px 10px;
+}
+.container2 {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  align-items: stretch;
+}
+.container2 .orange {
+  background-color: orange;
+  margin: 40px 20px;
+  flex: 1;
+}
+.container3 {
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  align-items: stretch;
+}
+.container3 .gaucheJaune {
+  background-color: yellow;
+  flex: 1;
+  margin: 10px;
+}
+.container3 .droiteJaune {
+  background-color: yellow;
+  flex: 1;
+  margin: 10px;
+}
+.verte {
+  background-color: green;
+  height: 150px;
+  margin: 40px 10px 20px 10px;
+}
