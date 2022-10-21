@@ -47,12 +47,12 @@ main {
 .container3 .gaucheJaune {
   background-color: yellow;
   flex: 1;
-  margin: 10px;
+  margin: 10px 20px;
 }
 .container3 .droiteJaune {
   background-color: yellow;
   flex: 1;
-  margin: 10px;
+  margin: 10px 20px;
 }
 .verte {
   background-color: green;
