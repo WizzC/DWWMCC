@@ -9,7 +9,7 @@ main {
     margin: 5% 10% 5% 10%;
     height: 100%;
 }
-
+/* pour centrer le titre */
 .containerHeader {
     display: flex;
 }
@@ -24,14 +24,14 @@ h1 {
     padding-bottom: 10px;
     font-size: 40px;
 }
-
+/* mettre les checkbox en colone */
 .containerCheckbox {
     display: flex;
     flex-direction: column;
     margin: 5%;
 
 }
-
+/* checkbox */
 label {
     font-size: 25px;
     border-bottom: solid 1px;
@@ -82,6 +82,7 @@ input {
 .containerCheckbox10 {
     margin: 20px 0 20px 0;
 }
+/* Bouton */
 .containerBouton{
     text-align: center;
     
@@ -96,6 +97,7 @@ button{
     margin: 20px 50px;
     
 }
+/* responsive */
 @media screen and (max-width:360px)
  {
     main{
