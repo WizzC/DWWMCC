@@ -10,19 +10,13 @@ if($seconde>=60){
         $minute=$minute-60;
         $heure=$heure+1;
     }
-    echo $heure . ("heures") ;
-    echo $minute . ("minutes");
-    echo $seconde . ("secondes");
 }
 elseif($minute>=60){
     $minute=$minute-60 ; 
     $heure=$heure+1;
-    echo $heure . ("heures") ;
-    echo $minute . ("minutes");
-    echo $seconde . ("secondes");
+
 }
-else{
 echo $heure . ("heures") ;
 echo $minute . ("minutes");
-echo $seconde . ("secondes");}
+echo $seconde . ("secondes");
 ?>

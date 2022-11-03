@@ -236,6 +236,7 @@ span {
 .image1 {
     margin-bottom: -10px;
 } */
+/*---------------- responsive--------------- */
 @media screen and (max-width:360px) {
     main {
         width: 360px;
