@@ -15,7 +15,7 @@
 $saisie = readline("écrire un nombre");
 $max = $saisie ;
 $min = $saisie ;
-for($i = 1;$i<=4;$i++){
+for($i = 1; $i<=4 ; $i++ ){
     $saisie = readline("écrire un nombre");
     if ( $max <= $saisie ){
         $max = $saisie ;
