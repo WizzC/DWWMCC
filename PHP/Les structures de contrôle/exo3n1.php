@@ -1,7 +1,8 @@
 <?php
 $nombre = readline("entrez nombre : ");
-if ($nombre>0){
+if (is_numeric($nombre>0)){
 echo("Positif");}
-else echo("negatif");
+elseif (is_numeric($nombre<0)){ 
+echo("negatif");}
 
 ?>
