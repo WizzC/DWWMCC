@@ -19,7 +19,7 @@ else{
     if($reponse == "true"){
         $reponse = true;
     }
-    elseif($reponse == "true"){
+    elseif($reponse == "false"){
         $reponse = false;
     }
     if($reponse){
@@ -39,7 +39,7 @@ else{
     }
     else{
         $reponse = readline ("Votre personnage porte-t-il des lunettes ?");
-        if($reponse == "oui"){
+        if($reponse == "true"){
             $reponse = true;
         }
         elseif($reponse == "false"){

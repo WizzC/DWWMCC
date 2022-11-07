@@ -1,5 +1,5 @@
 <?php
-$nombre = readline ("Donnez unnombre entre 10 et 20 ");
+$nombre = readline ("Donnez un nombre entre 10 et 20 ");
 while($nombre<10 || $nombre>20){
     if($nombre<10){
         echo $nombre = readline (" plus grand ");
