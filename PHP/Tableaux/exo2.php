@@ -2,10 +2,10 @@
 $neg = 0 ;
 $pos = 0 ;
 $nombreval = readline("Ecris ton nombre de valeur : ");
-$az = [] ;
+$tab = [] ;
 for( $i=1; $i<=$nombreval ; $i++ ){
     $nombre = readline("Ecrire une valeur : ");
-    $az[$i] = $nombre ;
+    $tab[$i] = $nombre ;
     if($nombre<0){
         $neg = $neg +1 ;
 
