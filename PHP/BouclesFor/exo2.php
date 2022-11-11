@@ -1,6 +1,6 @@
 <?php
 
-$nombre1 = readline("ecrire un 1er nombre : ");
+$nombre1 = readline("ecrire un nombre : ");
 
 
 echo "Les 5 nombres précédants sont" . "\n";
