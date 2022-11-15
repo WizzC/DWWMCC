@@ -24,8 +24,8 @@ switch($menu){
     case 2 :
         foreach($tabNotes as $key => $value){
             echo $key . " ";
-        foreach($value as $notes ){        
-    }
+    //     foreach($value as $notes ){        
+    // }
     echo "sa moyenne est de : " . round(array_sum($value) / count($value),2);
     echo "\n";
     
@@ -33,8 +33,8 @@ switch($menu){
     case 3 :
     $nom = readline("Entrez nom de l'élève recherché : ");
     foreach($tabNotes as $key => $value){
-        foreach($value as $notes ){    
-        }
+        // foreach($value as $notes ){    
+        // }
     
     if($nom == $key){
         echo "La moyenne de " . $nom . " est de : " . round(array_sum($value) / count($value),2);
@@ -43,3 +43,4 @@ switch($menu){
 }
 break;
 }
+?>
