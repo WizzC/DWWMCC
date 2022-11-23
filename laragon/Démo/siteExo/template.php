@@ -23,14 +23,16 @@
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Facile</a>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="exo1Facile.php">Exo1</a>
-              <a class="dropdown-item" href="#">Exo2</a>
-              <a class="dropdown-item" href="#">Exo3</a>
+              <a class="dropdown-item" href="exo2Facile.php">Exo2</a>
+              <a class="dropdown-item" href="exo3Facile.php">Exo3</a>
+              <a class="dropdown-item" href="exo4Facile.php">Exo4</a>
+              <a class="dropdown-item" href="exo5Facile.php">Exo5</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Moyen</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Exo1</a>
-              <a class="dropdown-item" href="#">Exo2</a>
+              <a class="dropdown-item" href="exo1Moyen.php">Exo1</a>
+              <a class="dropdown-item" href="exo2Moyen.php">Exo2</a>
               <a class="dropdown-item" href="#">Exo3</a>
           </li>
           <li class="nav-item dropdown">
