@@ -17,4 +17,8 @@ if (isset($_POST["submit"])) {
     <h1><?php echo $carre ?></h1>
 </button>
 
-c
+<?php 
+$titre = "Exo 1";
+$content = ob_get_clean();
+require "template.php";
+?>

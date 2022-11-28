@@ -1,5 +1,4 @@
 <?php ob_start() ?>
-
 <?php
 $nombre1 = 5;
 $nombre2 = 122;

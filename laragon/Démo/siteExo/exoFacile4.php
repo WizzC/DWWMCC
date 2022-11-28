@@ -1,5 +1,5 @@
 <?php ob_start() ?>
-<form action="" method="POST">
+<form action="" method="GET">
     <input type="string" name="pseudo" />
     <input type="number" name="age">
     <button type="submit" name="submit">Valider</button>
@@ -7,9 +7,9 @@
 <?php
 $pseudo = null;
 $age = null;
-if (isset($_POST["submit"])) {
-    $pseudo = $_POST["pseudo"];
-    $age = $_POST["age"];
+if (isset($_GET["submit"])) {
+    $pseudo = $_GET["pseudo"];
+    $age = $_GET["age"];
 }
 ?>
 <p>Pseudo <?= $pseudo ?> Age <?= $age ?></p>

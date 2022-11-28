@@ -5,7 +5,7 @@ $continuer = 1;
 while($continuer != "N"){
 // Demande a l'utilisateur quel de rentrer un nombre
 $rayon = readline("Quel est le rayon du cercle : ");
-// calcul du rayon
+// calcul du circonference
 $circonference = 2 * pi() * $rayon ;
 // calcul la surface
 $surface = pi() * ($rayon * $rayon);

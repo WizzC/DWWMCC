@@ -19,7 +19,7 @@ else{
 
 
 ?>
-<p><?php echo $pair ?></p>
+<p><?= $pair ?></p>
 
 
 

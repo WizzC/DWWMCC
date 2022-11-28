@@ -13,7 +13,7 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">Acceuil</a>
+      <a class="navbar-brand" href="index.php">Accueil</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -22,24 +22,25 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Facile</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="exo1Facile.php">Exo1</a>
-              <a class="dropdown-item" href="exo2Facile.php">Exo2</a>
-              <a class="dropdown-item" href="exo3Facile.php">Exo3</a>
-              <a class="dropdown-item" href="exo4Facile.php">Exo4</a>
-              <a class="dropdown-item" href="exo5Facile.php">Exo5</a>
+              <a class="dropdown-item" href="exoFacile1.php">Exo1</a>
+              <a class="dropdown-item" href="exoFacile2.php">Exo2</a>
+              <a class="dropdown-item" href="exoFacile3.php">Exo3</a>
+              <a class="dropdown-item" href="exoFacile4.php">Exo4</a>
+              <a class="dropdown-item" href="exoFacile5.php">Exo5</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Moyen</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="exo1Moyen.php">Exo1</a>
-              <a class="dropdown-item" href="exo2Moyen.php">Exo2</a>
-              <a class="dropdown-item" href="#">Exo3</a>
+              <a class="dropdown-item" href="exoMoyen1.php">Exo1</a>
+              <a class="dropdown-item" href="exoMoyen2.php">Exo2</a>
+              <a class="dropdown-item" href="exoMoyen3.php">Exo3</a>
+              <a class="dropdown-item" href="exoMoyen4.php">Exo4</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Difficile</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Exo1</a>
-              <a class="dropdown-item" href="#">Exo2</a>
+              <a class="dropdown-item" href="exoDifficile1.php">Exo1</a>
+              <a class="dropdown-item" href="exoDifficile2.php">Exo2</a>
               <a class="dropdown-item" href="#">Exo3</a>
           </li>
           <li class="nav-item dropdown">
@@ -54,10 +55,6 @@
       </div>
     </div>
   </nav>
-
-
-
-
 
   <div class="container">
     <h1 class=" rounded border border-dark p-2 m-2  text-white bg-info"><?= $titre ?></h1>
