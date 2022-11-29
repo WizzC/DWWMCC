@@ -31,17 +31,17 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Moyen</a>
             <div class="dropdown-menu">
-<<<<<<< HEAD
-              <a class="dropdown-item" href="exo1Moyen.php">Exo1</a>
-              <a class="dropdown-item" href="exo2Moyen.php">Exo2</a>
-              <a class="dropdown-item" href="exo3Moyen.php">Exo3</a>
-              <a class="dropdown-item" href="exo4Moyen.php">Exo4</a>
-=======
+
               <a class="dropdown-item" href="exoMoyen1.php">Exo1</a>
               <a class="dropdown-item" href="exoMoyen2.php">Exo2</a>
               <a class="dropdown-item" href="exoMoyen3.php">Exo3</a>
               <a class="dropdown-item" href="exoMoyen4.php">Exo4</a>
->>>>>>> 2b01bcd71cfc96422f1da54ebf08646b8be912d2
+              <a class="dropdown-item" href="exoMoyen5.php">Exo5</a>
+              <a class="dropdown-item" href="exoMoyen6.php">Exo6</a>
+              <a class="dropdown-item" href="exoMoyen7.php">Exo7</a>
+              <a class="dropdown-item" href="exoMoyen8.php">Exo8</a>
+              <a class="dropdown-item" href="exoMoyen9.php">Exo9</a>
+              <a class="dropdown-item" href="exoMoyen10.php">Exo10</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Difficile</a>
