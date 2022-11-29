@@ -33,7 +33,8 @@
             <div class="dropdown-menu">
               <a class="dropdown-item" href="exo1Moyen.php">Exo1</a>
               <a class="dropdown-item" href="exo2Moyen.php">Exo2</a>
-              <a class="dropdown-item" href="#">Exo3</a>
+              <a class="dropdown-item" href="exo3Moyen.php">Exo3</a>
+              <a class="dropdown-item" href="exo4Moyen.php">Exo4</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Difficile</a>

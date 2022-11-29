@@ -17,4 +17,3 @@ if (isset($_POST["submit"])) {
     <h1><?php echo $carre ?></h1>
 </button>
 
-c
