@@ -17,8 +17,9 @@ $eleve3 = new Stagiaire("Frefre",[2,5,20,1]);
 
 $tabEleves = [$eleve1,$eleve2,$eleve3];
 ?>
-<div>
-    <?php
+
+  <?php
+
 foreach($tabEleves as $eleves){
         echo "L'eleve " . $eleves->getNom() . " a pour notes : " ;
        
@@ -32,7 +33,7 @@ foreach($tabEleves as $eleves){
     }
     
 
-?></div>
+?>
 <?php
 $titre = "Exo 9";
 $content = ob_get_clean();

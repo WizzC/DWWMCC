@@ -1,4 +1,5 @@
 <?php ob_start() ?>
+
 <?php 
 class Stagiaire{
     private string $nom ;
@@ -14,13 +15,10 @@ public function getNotes(){return $this->notes;}
 $eleve1 = new Stagiaire("Titi",[12,15,20,12]);
 $eleve2 = new Stagiaire("Wawa",[0,1,1,1]);
 $eleve3 = new Stagiaire("Frefre",[2,5,20,1]);
+$eleve4 = new Stagiaire("Jean-eud",[20,20,20,19]);
 
-$tabEleves = [$eleve1,$eleve2,$eleve3];
-
-
-
+$tabEleves = [$eleve1,$eleve2,$eleve3,$eleve4];
 ?>
-
 <table class="table table-striped-columns">
   <thead>
     <tr>
@@ -31,7 +29,7 @@ $tabEleves = [$eleve1,$eleve2,$eleve3];
       <th scope="col">Min</th>
     </tr>
   </thead>
-  
+ 
   <tbody>
     <tr>
 <?php foreach($tabEleves as $eleves){?>
@@ -47,7 +45,7 @@ $tabEleves = [$eleve1,$eleve2,$eleve3];
 </table>
 
 <?php 
-$titre = "Exo 9";
+$titre = "Exo 10";
 $content = ob_get_clean();
 require "template.php";
 ?>
