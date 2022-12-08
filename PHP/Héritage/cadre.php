@@ -17,8 +17,27 @@ class Cadre extends Employe {
     public function getListeEmploye(){return $this->listeEmploye;}
     public function setListeEmploye(){return $this->listeEmploye;}
 
-    public function augmentation(){
+    public  function __toString()
+    {
+        $texte = $this->nom . " " . $this->prenom ." a pour numéro de sécu " . $this->numSecu . " est touche un salaire de " . $this->salaire . " en tant que " . $this->job . " et est cadre de " ."\n";
+     
         
+        
+        return $texte;
+    }
+    public function augmentation($cadre){$i=0;
+        foreach ($cadre->getListeEmploye() as $elements){
+            echo  $elements->getNom() . " ". $elements->getPrenom() . " a pour numéro de sécu " . $elements->getNumSecu() . " est touche un salaire de " ;
+            $i= $i +1;
+            if($i == 1){
+                $salaire =$elements->getSalaire()*1.1;
+                echo round($salaire,2) . " en tant que " . $elements->getJob() . "\n";
+            }
+            if($i == 2){
+                $salaire =$elements->getSalaire()*1.2;
+                echo round($salaire,2) . " en tant que " . $elements->getJob() . "\n";
+            }
+        }
     }
 
 }

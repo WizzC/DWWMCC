@@ -14,18 +14,9 @@ foreach($employes as $employe){
     echo $employe->__toString() . $employe->effectueSonJob();
 }
 echo $cadre->__toString();
+echo $cadre->augmentation($cadre);
 
-foreach ($cadre->getListeEmploye() as $elements){
-    if($elements->getNom() == "Neymar"){
-        $salaire =$elements->getSalaire()*1.1;
-        echo $salaire;
-    }
-    if($elements->getNom() == "Odile"){
-        $salaire =$elements->getSalaire()*1.2;
-        echo $salaire;
-    }
-}
-
+echo $employé2->__toString()
 
 
 ?>
