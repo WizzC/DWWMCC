@@ -1,6 +1,6 @@
 <?php
-require "classClient.php";
-require "classLigneCommande.php";
+// require "classClient.php";
+
 class Commande{
     private string $numeroCommande;
     private $client;
@@ -14,7 +14,17 @@ class Commande{
     }
 public function getNumeroCommande(){return $this->numeroCommande;}
 public function getClient(){return $this->client;}
-public function getListeLigneCommande(){return $this;}
+public function getListeLigneCommande(){return $this->listeLigneCommande;}
+
+public function setNumeroCommande($numeroCommande){return $this->numeroCommande=$numeroCommande;}
+public function setClient($client){return $this->client=$client;}
+public function setListeLigneCommande($listeLigneCommande){return $this->listeLigneCommande=$listeLigneCommande;}
+
+public function affichageCommande(){
+    echo $this->numeroCommande . " " . $this->client . " " . $this->listeLigneCommande . "\n";
+}
+
+
 }
 
 ?>

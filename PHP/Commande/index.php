@@ -3,15 +3,34 @@ require "classProduit.php";
 require "classLigneCommande.php";
 require "classClient.php";
 require "classCommande.php";
-$produit1 = new Produit ("mars","barre chocolatée", "19596959488903003",6);
-$produit2 = new Produit ("twix","barre chocolatéer","93890393229902",12);
-$produit3 = new Produit ("kinder bueno","un cœur fondant aux noisettes et une fine gaufrette croustillante enrobée de chocolat","98765903456",1);
-$produit4 = new Produit ("kinder country","barre de céréales et barre au chocolat","67489387789988844",14);
-$produit5 = new Produit ("petit prince","biscuit rond dentelé fourré au chocolat ou à la vanille","9800092224442111",15);
+
+$produit1 = new Produit ("001","Mars", "19596959488903003",6);
+$produit2 = new Produit ("002","twix","93890393229902",12);
+$produit3 = new Produit ("003","kinder bueno","98765903456",1);
+$produit4 = new Produit ("004","kinder country","67489387789988844",14);
+$produit5 = new Produit ("005","petit prince","9800092224442111",15);
 $produits= Produit::getProduit();
+
+$ligneCommande1 = new LigneCommande();
+$ligneCommande1->setProduit($produit1->getLibelle());
+$ligneCommande1->setQte(5);
+
+$client1 = new Client();
+$client1->setNom("Clement");
+$client1->setNumeroClient("1");
+
+$commande1 = new Commande();
+$commande1->setNumeroCommande(1);
+$commande1->setClient($client1);
+$commande1->setListeLigneCommande($ligneCommande1);
 
 foreach($produits as $element){
 
     echo $element->afficherSesInfos();
+    
 }
+
+echo calculTotalTTC($ligneCommande1->getQte(),$produit1->getPrixUnitaireTTC());
+
+
 ?>

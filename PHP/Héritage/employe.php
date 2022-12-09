@@ -20,11 +20,11 @@ class Employe{
     public function getSalaire(){return $this->salaire;}
     public function getJob(){return $this->job;}
 
-    public function setNom(){return $this->nom;}
-    public function setPrenom(){return $this->prenom;}
-    public function setNumSecu(){return $this->numSecu;}
-    public function setSalaire(){return $this->salaire;}
-    public function setJob(){return $this->job;}
+    public function setNom($nom){return $this->nom=$nom;}
+    public function setPrenom($prenom){return $this->prenom=$prenom;}
+    public function setNumSecu($numSecu){return $this->numSecu=$numSecu;}
+    public function setSalaire($salaire){return $this->salaire=$salaire;}
+    public function setJob($job){return $this->job=$job;}
 
     public  function __toString()
     {
