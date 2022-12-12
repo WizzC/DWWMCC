@@ -17,6 +17,7 @@ $ligneCommande1->setQte(5);
 
 $client1 = new Client();
 $client1->setNom("Clement");
+$client1->setPrenom("vgz");
 $client1->setNumeroClient("1");
 
 $commande1 = new Commande();
@@ -30,7 +31,7 @@ foreach($produits as $element){
     
 }
 
-echo calculTotalTTC($ligneCommande1->getQte(),$produit1->getPrixUnitaireTTC());
+// echo calculTotalTTC($ligneCommande1->getQte(),$produit1->getPrixUnitaireTTC());
 
 
 ?>
