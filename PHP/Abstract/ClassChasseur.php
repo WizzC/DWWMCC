@@ -8,7 +8,7 @@ class Chasseur extends Humain{
         parent::__construct($nom);
     }
     public function getArme(){return $this->arme;}
-    public function setArme($arme){return $this->arme = $arme;}
+    public function setArme($arme){ $this->arme = $arme;}
 
     public function chasser(){
         return $this->nom . " tire sur le lapin avec son fusil est ..."  . "\n";

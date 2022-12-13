@@ -9,7 +9,7 @@ class Lapin extends Animaux{
         parent::__construct($couleur,$pattes);
     }
     public function getEnVie(){return $this->enVie;}
-    public function setEnVie($enVie){return $this->enVie = $enVie;}
+    public function setEnVie($enVie){ $this->enVie = $enVie;}
     
     public function seNourir(){
         return "Le lapin mange " . "\n";

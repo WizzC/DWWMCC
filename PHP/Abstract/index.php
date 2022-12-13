@@ -9,6 +9,7 @@ while($lapin->getEnVie()){
    $lapin->setEnVie(rand());
    if($lapin->getEnVie()%2==0){
     $lapin->setEnVie(true);
+    echo $lapin->seNourir();
     echo $chasseur->seDeplacer();
     echo $lapin->crier() ;
     echo $chasseur->chasser();
@@ -16,6 +17,7 @@ while($lapin->getEnVie()){
    }
    else{
       $lapin->setEnVie(false);
+      echo $lapin->seNourir();
       echo $chasseur->seDeplacer();
       echo $lapin->crier() ;
     echo $chasseur->chasser();

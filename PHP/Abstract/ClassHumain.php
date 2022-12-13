@@ -9,7 +9,7 @@ abstract class Humain implements Deplacement{
     }
 
     public function getNom(){return $this->nom;}
-    public function setNom($nom){return $this->nom=$nom;}
+    public function setNom($nom){ $this->nom=$nom;}
 
     public function seDeplacer(){}
 }
