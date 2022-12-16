@@ -114,4 +114,19 @@ function pyramide(){
     }
 }
 }
+function nombremax(){
+    $nombre1 = readline("Entrez un 1e nombre : ");
+    $nombre2 = readline("Entrez un 2e nombre : ");
+    if ($nombre1 == $nombre2){
+        echo "égalité";
+    }
+    elseif ($nombre1 > $nombre2){
+        echo $nombre1 . " est plus grand que " . $nombre2 ;
+    }
+    else{
+        echo $nombre2 . " est plus grand que " . $nombre1 ;
+    }
+    return;
+}
+
 ?>
