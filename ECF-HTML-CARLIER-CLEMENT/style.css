@@ -8,15 +8,9 @@ main {
     padding: 50px;
     margin: 5% 10% 5% 10%;
     height: 100%;
-}
-<<<<<<< HEAD
-/* pour centrer le titre */
-=======
+
 /* configurer titre */
->>>>>>> c85faa505571c16597f4c03659667c46c0834a46
-.containerHeader {
-    display: flex;
-}
+}    
 
 h1 {
     background-color: #836AE7;
@@ -28,22 +22,14 @@ h1 {
     padding-bottom: 10px;
     font-size: 40px;
 }
-<<<<<<< HEAD
 /* mettre les checkbox en colone */
-=======
-/* mettre les checkbox les une en dessous des autres */
->>>>>>> c85faa505571c16597f4c03659667c46c0834a46
 .containerCheckbox {
     display: flex;
     flex-direction: column;
     margin: 5%;
 
 }
-<<<<<<< HEAD
 /* checkbox */
-=======
-/* taille ecriture et souligner */
->>>>>>> c85faa505571c16597f4c03659667c46c0834a46
 label {
     font-size: 25px;
     border-bottom: solid 1px;
@@ -94,11 +80,7 @@ input {
 .containerCheckbox10 {
     margin: 20px 0 20px 0;
 }
-<<<<<<< HEAD
 /* Bouton */
-=======
-/* centrer les boutons */
->>>>>>> c85faa505571c16597f4c03659667c46c0834a46
 .containerBouton{
     text-align: center;
     
