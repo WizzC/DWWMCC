@@ -16,7 +16,6 @@ class Parrallepipede extends Rectangle {
 
     public function perimetreParrallepipede()
     {
-<<<<<<< HEAD
         $perimetre = ($this->longueur+$this->largeur)*2 *$this->hauteur ;
     return $perimetre;
     }
@@ -24,15 +23,6 @@ class Parrallepipede extends Rectangle {
     public function volumeParrallepipede(){
         $volume = $this->longueur * $this->largeur * $this->hauteur;
         return $volume;
-=======
-        return ($this->longueur+$this->largeur)*2 *$this->hauteur ;
-    
-    }
-
-    public function volumeParrallepipede(){
-    return $this->longueur * $this->largeur * $this->hauteur;
-        
->>>>>>> 3eb557910c70df121bf4f4c2b210179bf261079a
     }
 
     public function afficherParrallepipede(){

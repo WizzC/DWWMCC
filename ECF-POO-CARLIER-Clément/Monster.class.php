@@ -12,5 +12,15 @@ class Monster extends Character{
     {
         return $adv->setLifePoint($adv->getLifePoint() - $this->strenghPoint);
     }
+    public function compteur(){
+        if ($this->getlifePoint()< 61){
+            $compteur = 1;
+            return $compteur;
+        }
+        else{
+            $compteur = 2;
+            return $compteur;
+        }
+    }
 }
 ?>

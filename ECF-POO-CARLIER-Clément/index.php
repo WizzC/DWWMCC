@@ -11,6 +11,9 @@ $banditManchot = new BanditManchot();
 
 // indique que le perso est cree
 echo "Le joueur " . $joueur->getPseudo() . " à été créé! \n";
+// le compteur sert a savoir si le monstre vaut 1 ou 2 point
+$compteur = $monstre->compteur() ;
+
 
 // la boucle sert a faire sortir le joueur 
 while ($joueur->getLifePoint() > 0 && $joueur->move() != 0) {
@@ -53,17 +56,12 @@ while ($joueur->getLifePoint() > 0 && $joueur->move() != 0) {
         if ($monstre->getLifePoint() < 0) {
             $monstre = new Monster();
             echo "Vous avec tuer un monstre !\n";
-            if($monstre->getLifePoint() < 61){
-            $joueur->setScore($joueur->getScore() + 1);
-        }
-            else{
-            $joueur->setScore($joueur->getScore() + 2);
-        }
+            $joueur->setScore($joueur->getScore() + $compteur);
             echo "votre score est de : " . $joueur->getScore() . "\n";
-        
+            $compteur = $monstre->compteur() ;
             
         }
     }
 };
 // affiche le score a la fin de la partie
-echo "votre score est de : " . $joueur->getScore() . "\n";
+echo "Vous avez finit la parti votre score est de : " . $joueur->getScore() . "\n";
