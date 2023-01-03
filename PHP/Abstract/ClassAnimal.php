@@ -11,9 +11,9 @@ abstract class Animaux implements Deplacement{
             $this->pattes = $pattes;
         }
     public function getCouleur(){return $this->couleur;}
-    public function setCouleur($couleur){ $this->couleur=$couleur;}
+    public function setCouleur($couleur){$this->couleur=$couleur;}
     public function getPattes(){return $this->pattes;}
-    public function setPattes($pattes){ $this->pattes=$pattes;}
+    public function setPattes($pattes){$this->pattes=$pattes;}
 
     public function seDeplacer(){}
     

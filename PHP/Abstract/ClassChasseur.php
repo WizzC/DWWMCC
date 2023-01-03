@@ -11,7 +11,7 @@ class Chasseur extends Humain{
     public function setArme($arme){ $this->arme = $arme;}
 
     public function chasser(){
-        return $this->nom . " tire sur le lapin avec son fusil est ..."  . "\n";
+        return $this->nom . " tire sur le lapin avec son " . $this->arme ." et ..."  . "\n";
 
     }
     public function seDeplacer(){
