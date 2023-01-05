@@ -53,7 +53,7 @@ while ($joueur->getLifePoint() > 0 && $joueur->move() != 0) {
         }
         // cree un nouveau monstre si le monstre meurt
 
-        if ($monstre->getLifePoint() < 0) {
+            if ($monstre->getLifePoint() < 0) {
             $monstre = new Monster();
             echo "Vous avec tuer un monstre !\n";
             $joueur->setScore($joueur->getScore() + $compteur);
@@ -64,4 +64,4 @@ while ($joueur->getLifePoint() > 0 && $joueur->move() != 0) {
     }
 };
 // affiche le score a la fin de la partie
-echo "Vous avez finit la parti votre score est de : " . $joueur->getScore() . "\n";
+echo "Vous avez fini la partie votre score est de : " . $joueur->getScore() . "\n";
