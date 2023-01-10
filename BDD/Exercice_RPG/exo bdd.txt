@@ -19,3 +19,39 @@
 	4SELECT concat(substring(nom,1,5),substring(description,1,20)) FROM classe
 4.
 	1.SELECT * FROM arme WHERE levelMIN>4
+	2.SELECT * FROM arme WHERE degat<25
+	3.SELECT nom , surnom FROM personnage where level=10
+	4.SELECT * FROM typeArme where est distance
+5.
+	1.SELECT * FROM arme where levelMIN>4 AND levelMIN<8
+	2.SELECT * FROM personnage where idPersonnage<3 AND level=10
+	3.SELECT * FROM arme where levelMIN<4 OR levelMIN>=8
+	4.SELECT * FROM arme where degat between 2 OR 30
+	5.SELECT * FROM arme where idArme<=2 AND degat between 25 AND 40
+	6.SELECT * FROM personnage where level!=8 AND level not between 6 and 7 
+	7.SELECT count(*) FROM personnage where level!=10
+	8.SELECT AVG(degat) FROM arme where levelMIN BETWEEN 3 and 7
+6.	
+	1.SELECT * FROM personnage where nom like 'l%'
+	2.SELECT * FROM personnage where nom like 'l%er'
+	3.select * from arme where nom like '%bois%'
+	4.SELECT * FROM arme where nom LIKE 'a_b%'
+	5.SELECT * FROM arme where idArme IN(1,2,4,5,7)
+	6.SELECT * FROM personnage where idPersonnage IN(2,3,4,6) AND level = 10 
+	7.SELECT * FROM personnage where surnom is not null
+	8.SELECT * FROM personnage where surnom is null
+	9.SELECT * FROM personnage LIMIT 3
+	10.SELECT * FROM personnage LIMIT 2 OFFSET 3
+jointure.
+	exemple -> SELECT * FROM personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse
+	SELECT * FROM personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse INNER JOIN arme ON personnage.idArmeUtilise = arme.idTypeArme
+1.
+	1.SELECT * FROM personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse
+	2.SELECT nom, levelMIN, degat,libelle,estDistance FROM arme INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
+2.
+	1.SELECT personnage.nom,classe.nom FROM personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse
+	2.SELECT personnage.nom as nomPersonnage,classe.nom as nomClasse FROM personnage INNER JOIN classe ON personnage.idClasse = classe.idClasse
+	3.SELECT * FROM personnage INNER JOIN arme ON personnage.idArmeUtilise = arme.idTypeArme
+	4.SELECT personnage.nom,arme.nom,arme.levelMIN,arme.degat,typearme.libelle,typearme.estDistance FROM personnage 
+	INNER JOIN arme ON personnage.idArmeUtilise = arme.idArme
+	INNER JOIN typearme ON arme.idTypeArme = typearme.idTypeArme
