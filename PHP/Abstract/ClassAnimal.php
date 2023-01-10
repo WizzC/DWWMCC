@@ -20,11 +20,17 @@ abstract class Animaux implements Deplacement{
 
     // On déclare deux méthodes "getter" pour récupérer la valeur des propriétés "couleur" et "pattes"
     public function getCouleur(){return $this->couleur;}
+<<<<<<< HEAD
     public function getPattes(){return $this->pattes;}
 
     // On déclare deux méthodes "setter" pour modifier la valeur des propriétés "couleur" et "pattes"
     public function setCouleur($couleur){ $this->couleur=$couleur;}
     public function setPattes($pattes){ $this->pattes=$pattes;}
+=======
+    public function setCouleur($couleur){$this->couleur=$couleur;}
+    public function getPattes(){return $this->pattes;}
+    public function setPattes($pattes){$this->pattes=$pattes;}
+>>>>>>> 4b1e01c0193b9c2f2ca221b815a510f767a72c5b
 
     // On déclare une méthode vide "seDeplacer" qui sera implémentée par les classes filles
     public function seDeplacer(){}

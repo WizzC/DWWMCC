@@ -1,0 +1,21 @@
+1.
+	1.SELECT * FROM personnage
+	2.SELECT * FROM arme
+	3.SELECT nom,levelMIN FROM arme
+	4.SELECT nom,surnom,level FROM personnage
+	5.SELECT nom as Pseudo,level as Niveau FROM personnage
+	6.SELECT libelle as `Type d'arme a feu` FROM arme
+2.
+	1.SELECT COUNT(*) FROM arme
+	2.SELECT COUNT(*) FROM personnage
+	3.SELECT AVG(level) FROM personnage
+	4.SELECT SUM(baseForce),SUM(baseAgi),SUM(baseIntel) FROM classe
+	5.SELECT MIN(levelMIN),MAX(levelMIN) FROM arme
+	6.SELECT SUM(baseForce + baseAgi + baseIntel) FROM classe
+3.
+	1.SELECT concat(nom, ' ' ,surnom) FROM personnage
+	2.SELECT concat(nom, ' ' ,baseForce,' ',baseAgi,' ',baseIntel) FROM classe
+	3.SELECT substring(nom,1,6) FROM personnage
+	4SELECT concat(substring(nom,1,5),substring(description,1,20)) FROM classe
+4.
+	1.SELECT * FROM arme WHERE levelMIN>4

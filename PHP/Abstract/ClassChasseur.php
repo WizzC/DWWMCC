@@ -26,7 +26,12 @@ class Chasseur extends Humain{
 
     // On déclare une méthode "chasser" qui renvoie une chaîne de caractères
     public function chasser(){
+<<<<<<< HEAD
         return $this->nom . " tire sur le lapin avec son fusil est ..."  . "\n";
+=======
+        return $this->nom . " tire sur le lapin avec son " . $this->arme ." et ..."  . "\n";
+
+>>>>>>> 4b1e01c0193b9c2f2ca221b815a510f767a72c5b
     }
 
     // On surcharge la méthode "seDeplacer" héritée de la classe "Humain"
