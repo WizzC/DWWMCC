@@ -1,6 +1,6 @@
 <?php
 require_once "Model.class.php";
-
+require_once "livre.class.php";
 class LivreManager extends Model{
     private $livres;
 
@@ -18,9 +18,15 @@ class LivreManager extends Model{
         $req->closeCursor();
         
         foreach($mesLivres as $livre){
-            $l = new Livre($livre['id'],$livre['titre'],$livre['nbPages'],$livre['image']);
+            $l = new Livre($livre['id'],$livre["titre"],$livre['nbPages'],$livre['image']);
             $this->ajoutLivres($l);
+        }      
+    }
+    public function getLivreById($id){
+        for($i=0;$i<count($this->livres);$i++){
+            if($this->livres[$i]->getId()==$id){
+                return $this->livres[$i];
+            }
         }
-      
     }
 }
