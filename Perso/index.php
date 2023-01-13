@@ -17,12 +17,16 @@ else{
                 $mangaController->afficherMangas();
             }elseif($url[1] === "l"){
                 echo $mangaController->afficherManga($url[2]);
-            }elseif($url[2] === "a"){
-                echo "ajouter d'un manga";
-            }elseif($url[3] === "m"){
-                echo "modifier un manga";
-            }elseif($url[4] === "s"){
-                echo "suppression d'un manga";
+            }elseif($url[1] === "a"){
+                $mangaController->ajoutManga();
+            }elseif($url[1] === "m"){
+                $mangaController->modificationManga((int)$url[2]);
+            }elseif($url[1] === "s"){
+                $mangaController->suppressionManga((int)$url[2]);
+            }else if($url[1]==="av"){
+                $mangaController->ajoutMangaValidation();
+            }elseif($url[1]==="mv"){
+                $mangaController->modificationMangaValidation();
             }else{
                 throw new Exception("La page n'existe pas");
             }

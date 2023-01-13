@@ -84,7 +84,26 @@ class LivresController {
         header("Location: ".URL."livres");
     }
 
+    public function modificationLivre($id){
+        $livre=$this->livreManager->getLivreById($id);
+        require "views/modifierLivre.view.php";
+    }
 
+    public function modificationLivreValidation(){
+        $imageActuelle = $this->livreManager->getLivreById((int)$_POST['identifiant'])->getImage();
+        $file = $_FILES['image'];
+
+        if($file['size']>0){
+            unlink("public/images/".$imageActuelle);
+            $repertoire="public/images/";
+            $nomImageTooAdd= $this->ajoutImage($file,$repertoire);
+        }
+        else{
+            $nomImageTooAdd = $imageActuelle;
+        }
+        $this->livreManager->modificationLivreBD((int)$_POST['identifiant'],$_POST['titre'],$_POST['nbPages'],$nomImageTooAdd);
+        header("Location: ".URL."livres");
+    }
 }
 
 ?>
