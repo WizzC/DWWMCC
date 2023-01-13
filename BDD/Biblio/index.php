@@ -22,7 +22,9 @@ else{
             }elseif($url[1] === "m"){
                 echo "modifier un livre";
             }elseif($url[1] === "s"){
-                echo "suppression d'un livre";
+                $livreController->suppressionLivre($url[2]) ;
+            }elseif ($url[1] == "av"){
+                $livreController->ajoutLivreValidation();
             }else{
                 throw new Exception("La page n'existe pas");
             }

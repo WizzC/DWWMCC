@@ -12,7 +12,7 @@ class MangaManager extends Model{
     public function setMangas($mangas){$this->mangas = $mangas;}
 
     public function chargementMangas(){
-        $req = $this->getBdd()->prepare("SELECT * FROM anime");
+        $req = $this->getBdd()->prepare("SELECT * FROM manga");
         $req->execute();
         $mesMangas= $req->fetchALL(PDO::FETCH_ASSOC); 
         $req->closeCursor();
