@@ -1,61 +1,92 @@
 <?php
 require_once "Model.class.php";
-require_once "livre.class.php";
-class LivreManager extends Model{
-    private $livres;
+require_once "Livre.class.php";
 
-    public function ajoutLivres($livre)
-    {
+// Permet de mettre tous les livres dans le même tableau
+class LivreManager extends Model{
+    private $livres; //tableau de livre
+
+    public function ajoutLivres($livre){
         $this->livres[]=$livre;
     }
-    public function getLivres(){return $this->livres;}
-    public function setLivres($livres){$this->livres = $livres;}
 
+    public function getLivres(){return $this->livres;}
+
+    // Va permettre de recup livres bdd
     public function chargementLivres(){
-        $req = $this->getBdd()->prepare("SELECT * FROM livres");
+        // appelle connexion à la bdd
+        $req=$this->getBdd()->prepare("SELECT * FROM LIVRES");
+        // on execute req
         $req->execute();
-        $mesLivres= $req->fetchALL(PDO::FETCH_ASSOC); 
+        // permet deviter des doublons
+        $meslivres=$req->fetchAll(PDO::FETCH_ASSOC);
+
+        // // Pour verifier
+        // echo "<pre>";
+        // print_r($livres);
+        // echo "</pre>";
+
+        // ferme requete
         $req->closeCursor();
-        
-        foreach($mesLivres as $livre){
-            $l = new Livre($livre['id'],$livre["titre"],$livre['nbPages'],$livre['image']);
+
+
+        foreach($meslivres as $livre){
+            // genere livre de la classe Livre
+            $l=new Livre($livre["id"],$livre["titre"],$livre["nbPages"],$livre["image"]);
             $this->ajoutLivres($l);
-        }      
+        }
+
     }
     public function getLivreById($id){
         for($i=0;$i<count($this->livres);$i++){
-            if($this->livres[$i]->getId()==$id){
+            if($this->livres[$i]->getId() === $id){
                 return $this->livres[$i];
             }
         }
     }
+
     public function ajoutLivreBd($titre,$nbPages,$image){
-        $req = "
-        INSERT INTO livres (titre, nbPages, image)
-        value (:titre, :nbPages, :image)";
-        $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":titre",$titre,PDO::PARAM_STR);
+        $req="
+        INSERT INTO livres (titre,nbPages,image)
+        value (:titre,:nbPages,:image)";
+        // connexion à bd
+        $stmt=$this->getBdd()->prepare($req);
+        // on met en lien la req avec ce qu'il y a dans la bd
+        $stmt->bindValue(":titre",$titre,PDO::PARAM_STR); //PDO::PARAM_STR sert à securiser le type de données
         $stmt->bindValue(":nbPages",$nbPages,PDO::PARAM_INT);
         $stmt->bindValue(":image",$image,PDO::PARAM_STR);
-        $resultat = $stmt->execute();
+        // sert à executer requete et a ajouter données à la bdd
+        $resultat=$stmt->execute();
+        // ferme connexion abdd
         $stmt->closeCursor();
 
+        // si requete fonctionne 
         if($resultat>0){
-            $livre = new Livre($this->getbDD()->lastInsertId(),$titre,$nbPages,$image);
+            // on ajoute le livre a la classe livre
+            $livre=new Livre($this->getBdd()->lastInsertId(),$titre,$nbPages,$image);
+            // ajoute livre au tableau de livre
             $this->ajoutLivres($livre);
         }
     }
-    public function suppressionLivreBD($id){
-        $req = "
-        Delete from livres where id = :idLivre
-        ";
-        $stmt = $this->getBdd()->prepare($req);
+
+    public function suppressionLivreBd($id){
+        //  il est interdit de faire une concatenation avec $id, pour la securité
+        $req="
+        DELETE from livres where id= :idLivre";
+        // connexion à bd
+        $stmt=$this->getBdd()->prepare($req);
         $stmt->bindValue(":idLivre",$id,PDO::PARAM_INT);
-        $resultat = $stmt->execute();
+        // sert à executer requete et a ajouter données à la bdd
+        $resultat=$stmt->execute();
+        // ferme connexion abdd
         $stmt->closeCursor();
+
+        // si requete fonctionne 
         if($resultat>0){
-            $livre = $this->getLivreById($id);
+            // on supprime le livre au tableau de livre
+            $livre=$this->getLivreById($id);
             unset($livre);
         }
     }
 }
+?>

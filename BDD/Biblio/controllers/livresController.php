@@ -1,40 +1,43 @@
 <?php
 require_once "models/LivreManager.class.php";
-// require_once "models/livre.class.php";
-class LivresController{
+
+class LivresController {
     private $livreManager;
 
-    public function __construct(){    
-        $this->livreManager=new LivreManager();
+    public function __construct(){
+        // on instancie et charge les livres
+        $this->livreManager=new LivreManager;
         $this->livreManager->chargementLivres();
     }
-
-    public function afficherLivres(){
-        $this->livreManager;
-        $livres= $this->livreManager->getLivres();
-        require "views/livres.view.php";
-    }
-    public function afficherLivre($id){
-        $livre = $this->livreManager->getLivreById($id);
-        require "views/afficherLivre.view.php";
     
+    public function afficherLivres(){
+        // $livres recup le tableau des livres
+        $livres=$this->livreManager->getLivres();
+        require "views/livres.view.php";
+        // qd on require, tous ce qui est declarer ds fonction et va dans require
     }
+
+    public function afficherLivre($id){
+        $livre=$this->livreManager->getLivreById($id);
+        require "views/afficherLivre.view.php";
+    }
+
     public function ajoutLivre(){
         require "views/ajoutLivre.view.php";
     }
+
     public function ajoutLivreValidation(){
-        $file = $_FILES['image'];
-        $repertoire = "public/images/";
-        $nomImageAjoute = $this->ajoutImage($file,$repertoire);
-        $this->livreManager->ajoutLivreBd($_POST['titre'],$_POST['nbPages'],$nomImageAjoute);
-        header('location: '. URL . "livres");
+        // charge image
+        $file=$_FILES["image"];
+        // ajouter image au image public
+        $repertoire="public/images/";
+        $nomImageAjoute= $this->ajoutImage($file,$repertoire);
+        // ajouter le livre en bdd
+        $this->livreManager->ajoutLivreBd($_POST["Titre"],$_POST["nbPages"],$nomImageAjoute);
+        // redirige lutilisateur vers la pages des livres
+        header("Location: ".URL."livres");
     }
-    public function suppressionLivre($id){
-        $nomImage = $this->livreManager->getLivreById($id)->getImage();
-        unlink("public/images/".$nomImage);
-        $this->livreManager->suppressionLivreBD($id);
-        header('location: '. URL . "livres");
-    }
+
     private function ajoutImage($file, $dir){
 
         // si la personne a oublier choisir un fichier
@@ -50,7 +53,7 @@ class LivresController{
         // ajout numero fichier generer aleatoire (eviter dooublons)
         $random = rand(0,99999);
         // genere nom fichier
-        $target_file = $dir.$random."".$file['name'];
+        $target_file = $dir.$random."_".$file['name'];
 
         // verifie si bien une image
         if(!getimagesize($file["tmp_name"]))
@@ -68,7 +71,20 @@ class LivresController{
         if(!move_uploaded_file($file['tmp_name'], $target_file))
             throw new Exception("l'ajout de l'image n'a pas fonctionné");
         //  si functionne dit nom image qui a été ajouter
-        else return ($random."".$file['name']);
+        else return ($random."_".$file['name']);
     }
+
+    public function suppressionLivre($id){
+        $nomImage= $this->livreManager->getLivreById($id)->getImage();
+        // retire l'image de mon dossier
+        unlink("public/images/".$nomImage);
+        // supprime ds bdd
+        $this->livreManager->suppressionLivreBd($id);
+        // redirige lutilisateur vers la pages des livres
+        header("Location: ".URL."livres");
+    }
+
+
 }
+
 ?>

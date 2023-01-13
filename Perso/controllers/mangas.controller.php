@@ -12,7 +12,7 @@ class MangasController{
     public function afficherMangas(){
         $this->mangaManager;
         $mangas= $this->mangaManager->getMangas();
-        require "views/mangas.view.php";
+        require "views/manga.view.php";
     }
     public function afficherManga($id){
         $manga = $this->mangaManager->getMangaById($id);

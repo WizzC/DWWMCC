@@ -1,6 +1,5 @@
 <?php
-
-class Livre {
+class Livre{
     private $id;
     private $titre;
     private $nbPages;
@@ -12,17 +11,19 @@ class Livre {
         $this->titre=$titre;
         $this->nbPages=$nbPages;
         $this->image=$image;
-
     }
-    // getter
+
     public function getId(){return $this->id;}
+    public function setId($id){$this->id=$id;}
+
     public function getTitre(){return $this->titre;}
+    public function setTitre($titre){$this->titre=$titre;}
+
     public function getNbPages(){return $this->nbPages;}
+    public function setNbPages($nbPages){$this->nbPages=$nbPages;}
+
     public function getImage(){return $this->image;}
-    // setter
-    public function setId($id){ $this->id=$id;}
-    public function setTitre($titre){ $this->titre=$titre;}
-    public function setNbPages($nbPages){ $this->nbPages=$nbPages;}
-    public function setImage($image){ $this->image=$image;}
+    public function setImage($image){$this->image=$image;}
 }
+
 ?>

@@ -1,25 +1,26 @@
-<?
-ob_start();
+<?php ob_start()
 ?>
+
 <form method="POST" action="<?= URL ?>livres/av" enctype="multipart/form-data">
+<!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
     <div class="form-group">
-        <label for="titre" class="form-label">Titre :</label>
-        <input type="text" class="form-control" id="titre" name="titre">
+        <label for="Titre">Titre :</label>
+        <input type="text" class="form-control" id="Titre" name="Titre">
+        <!-- id sert pour js et css -->
     </div>
     <div class="form-group">
-        <label for="nbPages" class="form-label">Nombre de pages :</label>
+        <label for="nbPages">Nombre de pages :</label>
         <input type="number" class="form-control" id="nbPages" name="nbPages">
     </div>
-
-    <div class="mb-3 form-group">
-        <label for="image">Image</label>
+    <div class="form-group">
+        <label for="image" class="form-label">Image :</label>
         <input class="form-control-file" type="file" id="image" name="image">
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Valider</button>
 </form>
 
-<?php 
+<?php
 $content = ob_get_clean();
 $titre = "Ajout d'un livre";
-require "template.php" ;
+require "template.php";
 ?>

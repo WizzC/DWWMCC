@@ -1,10 +1,10 @@
-<?php ob_start()?>
+<?php ob_start()
+?>
 
-<p>ici le contenu de ma page d'accueil</p>
-
+Ici page acc
 
 <?php
-$content = ob_get_clean();
-$titre = "Bibliotèque MGA";
+$content=ob_get_clean();
+$titre="Bibliothèque MGA";
 require "template.php";
 ?>

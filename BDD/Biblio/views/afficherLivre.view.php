@@ -1,16 +1,17 @@
-<?php ob_start();?>
+<?php ob_start()?>
+
 <div class="row">
     <div class="col-6">
-        <img src="<?= URL ?>public/images/<?= $livre->getImage();?>">
-
+        <img src="<?=URL ?>public/images/<?= $livre->getImage() ?>">
     </div>
     <div class="col-6">
-        <p>Titre : <?=$livre->getTitre();?></p>
-        <p>Nombre de pages : <?=$livre->getNbPages();?></p>
+        <p>Titre : <?= $livre->getTitre() ?></p>
+        <p>Nombre de pages : <?= $livre->getNbPages() ?></p>
     </div>
 </div>
+
 <?php
-$content = ob_get_clean();
-$titre = $livre->getTitre();
-require "template.php";
+    $titre=$livre->getTitre();
+    $content=ob_get_clean();
+    require "template.php";
 ?>
