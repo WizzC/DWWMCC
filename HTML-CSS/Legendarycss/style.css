@@ -1,0 +1,310 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #EFE784;
+}
+
+main {
+    width: 960px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.contenant {
+    position: relative;
+    height: 250px;
+}
+
+.Header {
+    background-image: url(image/header.png);
+    height: 250px;
+    position: relative;
+    z-index: 1;
+}
+
+.LogoTop {
+    background-image: url(image/LogoTopMobile.png);
+    height: 250px;
+    width: 151px;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 2;
+    bottom: 73%;
+    left: 43%;
+    /* background-size: cover;
+    height: 40px;
+    /* position: relative; */
+    /* top: -200px;
+    left: 370px;
+    display: block;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    z-index: 2; */ 
+}
+
+
+
+
+.Legendary {
+    position: absolute;
+    top: 150px;
+    left: 275px;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    margin-left: 0px;
+    font-size: 40px;
+    letter-spacing: 20px;
+    z-index: 2;
+    color: #EFE784;
+}
+
+h1 {
+    color: #EFE784;
+    border-top: solid 1px;
+    color: #EFE784;
+    border-bottom: solid 1px;
+    color: #EFE784;
+    /* margin-left: 45%;
+    margin-right: 45%; */
+    margin-bottom: 25px;
+    text-align: center;
+    width: 100px;
+    margin: 0 auto;
+}
+
+p {
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.TexteIntro {
+    color: #EFE784;
+
+    margin-top: 20px;
+
+}
+
+p.textAve {
+    color: #6CBCB3;
+    margin-bottom: 15px;
+}
+
+p.textAstar {
+    color: #444C4A;
+    margin-bottom: 15px;
+}
+
+p.textWom {
+    color: #fff;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #6CBCB3;
+    /* margin-left: 200px; */
+    padding-top: 30px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+
+}
+
+h3 {
+    color: #444C4A;
+    /* margin-left: 200px; */
+    padding-top: 20px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+h4 {
+    color: #fff;
+    /* margin-left: 200px; */
+    padding-top: 20px;
+    font-size: 30px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+div.Avengers {
+    background-color: #fff;
+    padding-bottom: 10px;
+}
+
+div.Astar {
+    background-color: #6CBCB3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div.bot {
+    background-color: black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+p.AvengerCredit {
+    color: #6CBCB3;
+    /* margin-top: 10px; */
+    padding-bottom: 5px;
+
+}
+
+p.AstarCredit {
+    color: #444C4A;
+    /* margin-top: 10px; */
+    padding-bottom: 5px;
+}
+
+p.WomanCredit {
+    color: #fff;
+    /* margin-top: 10px; */
+    padding-bottom: 5px;
+}
+
+p.CreditLegendary {
+    color: #fff;
+    margin-left: 50px;
+}
+
+span {
+    color: #EFE784;
+}
+
+.ImgAvengers {
+    background-image: url('image/Avengers.png');
+    height: 200px;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin: auto;
+    width: 560px;
+    position: relative;
+    margin-bottom: 15px;
+
+}
+
+.ImgAStarIsBorn {
+    background-image: url(image/AStarIsBorn.png);
+    height: 200px;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin: auto;
+    width: 560px;
+    margin-bottom: 15px
+}
+
+.ImgWomanAtWar {
+    background-image: url(image/WomanAtWar.png);
+    height: 200px;
+    background-repeat: no-repeat;
+    align-self: center;
+    margin: auto;
+    width: 560px;
+    margin-bottom: 15px
+}
+
+.LogoBot {
+    background-image: url(image/Logo1.png);
+    height: 50px;
+    background-repeat: no-repeat;
+    margin-left: 50px;
+    /* padding-top: 25px; */
+}
+
+.Intro {
+    background-color: #3E3838;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.WomanAt {
+    background-color: #3E3838;
+    padding-bottom: 10px;
+
+}
+
+/* 
+.image1 {
+    margin-bottom: -10px;
+} */
+/*---------------- responsive--------------- */
+@media screen and (max-width:360px) {
+    main {
+        width: 360px;
+    }
+
+    .contenant {
+        height: 170px;
+    }
+
+    p {
+        font-size: 21px;
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+
+    .ImgAvengers {
+        background-image: url(image/AvengerMobil.png);
+        margin: auto;
+        align-self: center;
+        height: 400px;
+        width: 300px;
+        margin-left: 30px;
+        margin-bottom: 12px;
+    }
+
+    .ImgAStarIsBorn {
+        background-image: url(image/AStarIsBornMobile.png);
+        margin: auto;
+        align-self: center;
+        height: 400px;
+        width: 300px;
+        margin-left: 30px;
+        margin-bottom: 12px;
+    }
+
+    .ImgWomanAtWar {
+        background-image: url(image/WomanMobile.png);
+        margin: auto;
+        align-self: center;
+        height: 400px;
+        width: 300px;
+        margin-left: 30px;
+        margin-bottom: 12px;
+    }
+
+    .Header {
+        background-image: url(image/headerMobile.png);
+        margin: auto;
+        align-self: center;
+        height: 170px;
+
+    }
+    .LogoTop{
+        background-image: url(image/LogoTopMobile.png);
+        height: 40px;
+        position: relative;
+        left: 13px;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        z-index: 2;
+    }
+    .Legendary {
+        text-align: center;
+        font-size: 25px;
+        left: 38px;
+        top: 120px;
+        font-size: 20px;
+    }
+
+}

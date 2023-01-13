@@ -1,0 +1,2 @@
+Reproduire la maquette "Architecture", en utilisant les techniques de Figma 
+pour intégrer les photos.
