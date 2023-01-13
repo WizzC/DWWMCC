@@ -13,13 +13,13 @@ ob_start()?>
         <th colspan="2">Actions</th>
     </tr>
     <?php 
-    for ($i=0;$i<count($livres);$i++) : ?>
+    for ($i=0;$i<count($mangas);$i++) : ?>
     <tr>
-    <td class="align-middle"><img src="public/images/<?=$livres[$i]->getImage();?>" width="60px"></td>
-    <td class="align-middle"><?=$livres[$i]->getNomAnime();?></td>
-    <td class="align-middle"><?=$livres[$i]->getDate();?></td>
-    <td class="align-middle"><?=$livres[$i]->getStyle();?></td>
-    <td class="align-middle"><?=$livres[$i]->getAuteur();?></td>
+    <td class="align-middle"><img src="public/images/<?=$mangas[$i]->getImage();?>" width="60px"></td>
+    <td class="align-middle"><?=$mangas[$i]->getNomAnime();?></td>
+    <td class="align-middle"><?=$mangas[$i]->getDate();?></td>
+    <td class="align-middle"><?=$mangas[$i]->getStyle();?></td>
+    <td class="align-middle"><?=$mangas[$i]->getAuteur();?></td>
     <td class="align-middle"><a href="" class="btn btn-warning" style="background-color: #4654D2">Modifier</a></td>
     <td class="align-middle"><a href="" class="btn btn-danger" >Supprimer</a></td>
 </tr>
@@ -29,6 +29,6 @@ ob_start()?>
 
 <?php
 $content = ob_get_clean();
-$titre = "Les livres de la bibliothèque";
+$titre = "Les mangas de la bibliothèque";
 require "template.php";
 ?>
