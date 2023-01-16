@@ -18,15 +18,9 @@ class LivreManager extends Model{
         $req=$this->getBdd()->prepare("SELECT * FROM LIVRES");
         // on execute req
         $req->execute();
-        // permet deviter des doublons
+
         $meslivres=$req->fetchAll(PDO::FETCH_ASSOC);
 
-        // // Pour verifier
-        // echo "<pre>";
-        // print_r($livres);
-        // echo "</pre>";
-
-        // ferme requete
         $req->closeCursor();
 
 

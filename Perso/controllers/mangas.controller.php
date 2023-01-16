@@ -35,7 +35,7 @@ class MangasController {
         // ajouter le Manga en bdd
         $this->mangaManager->ajoutMangaBd($_POST["nomAnime"],$_POST["date"],$_POST["style"],$_POST["auteur"],$nomImageAjoute);
         // redirige lutilisateur vers la pages des Mangas
-        header("Location: ".URL."Manga");
+        header("Location: ".URL."manga");
     }
 
     private function ajoutImage($file, $dir){
@@ -89,7 +89,7 @@ class MangasController {
     }
 
     public function modificationMangaValidation(){
-        $imageActuelle = $this->mangaManager->getmangaById((int)$_POST['identifiant'])->getImage();
+        $imageActuelle = $this->mangaManager->getMangaById((int)$_POST['identifiant'])->getImage();
         $file = $_FILES['image'];
 
         if($file['size']>0){

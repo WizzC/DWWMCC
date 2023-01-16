@@ -31,7 +31,7 @@ class MangaManager extends Model{
     }
     public function ajoutMangaBd($image,$nomAnime,$date,$style,$auteur){
         $req="
-        INSERT INTO mangas (image,nomAnime,date,style,auteur)
+        INSERT INTO manga (image,nomAnime,date,style,auteur)
         value (:image,:nomAnime,:date,:style,:auteur)";
         // connexion à bd
         $stmt=$this->getBdd()->prepare($req);

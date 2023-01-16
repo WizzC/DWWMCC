@@ -12,7 +12,7 @@ else{
     switch($url[0]){
         case "accueil" : require "views/accueil.view.php";
         break;
-        case "mangas" : 
+        case "manga" : 
             if(empty($url[1])){
                 $mangaController->afficherMangas();
             }elseif($url[1] === "l"){

@@ -1,7 +1,7 @@
 <?php ob_start()
 ?>
 
-<form method="POST" action="<?= URL ?>livres/av" enctype="multipart/form-data">
+<form method="POST" action="<?= URL ?>manga/av" enctype="multipart/form-data">
 <!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
     <div class="form-group">
         <label for="Titre">Nom du manga :</label>
@@ -30,6 +30,6 @@
 
 <?php
 $content = ob_get_clean();
-$titre = "Ajout d'un livre";
+$titre = "Ajout d'un manga";
 require "template.php";
 ?>
