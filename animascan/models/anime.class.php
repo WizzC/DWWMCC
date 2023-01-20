@@ -2,16 +2,16 @@
 class Anime{
     private $id;
     private $nom;
-    private $dateDeSortie;
+    private $date;
     private $auteur;
     private $description;
     private $image;
 
-    public function __construct($id,$nom,$dateDeSortie,$auteur,$description,$image)
+    public function __construct($id,$nom,$date,$auteur,$description,$image)
     {
         $this->id=$id;
         $this->nom=$nom;
-        $this->dateDeSortie=$dateDeSortie;
+        $this->date=$date;
         $this->auteur=$auteur;
         $this->description=$description;
         $this->image=$image;
@@ -23,8 +23,8 @@ class Anime{
     public function getNom(){return $this->nom;}
     public function setNom($nom){$this->nom=$nom;}
 
-    public function getDateDeSortie(){return $this->dateDeSortie;}
-    public function setDateDeSortie($dateDeSortie){$this->dateDeSortie=$dateDeSortie;}
+    public function getDate(){return $this->date;}
+    public function setDate($date){$this->date=$date;}
 
     public function getAuteur(){return $this->auteur;}
     public function setAuteur($auteur){$this->auteur=$auteur;}
