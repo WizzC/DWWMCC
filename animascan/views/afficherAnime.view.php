@@ -3,7 +3,7 @@ session_start();
 ob_start() ?>
 <div class="row">
   <div class="col-4 p-5">
-    <img src="<?= URL ?>public/image/<?= $anime->getImage() ?>" style="height: 500px;">
+    <img src="<?= URL ?>public/image/<?=$anime->getImage()?>" style="height: 500px;">
   </div>
   <div class="col-8 " style="background-color: white;">
     <figure>
