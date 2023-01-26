@@ -30,10 +30,10 @@ endif;?>
         <td class="align-middle"><?= $scan[$i]->getTomes() ?></td>
         <td class="align-middle"><?= $scan[$i]->getEpisodes() ?></td>
         <td class="align-middle"><?= $scan[$i]->getidAnime() ?></td>
-        <td class="align-middle"><a href="<?= URL ?>listeScan/m/<?= $scan[$i]->getId() ?>" class="btn btn-warning">Modifier</a></td>
+        <td class="align-middle"><a href="<?= URL ?>listeScan/m/<?= $scan[$i]->getIdScan() ?>" class="btn btn-warning">Modifier</a></td>
         <td class="align-middle"> 
             <!-- onSubmit pour confirmer la suprresion -->
-            <form action="<?= URL ?>listeScan/s/<?= $scan[$i]->getId() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le scan ?')" method="POST">
+            <form action="<?= URL ?>listeScan/s/<?= $scan[$i]->getIdScan() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le scan ?')" method="POST">
                 <button class="btn btn-danger" type="submit">Supprimer</button>
             </form>
         </td>

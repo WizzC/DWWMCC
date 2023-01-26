@@ -17,7 +17,7 @@ class UsersController {
     public function ajoutUsersValidation(){
         
         // ajouter le Anime en bdd
-        $this->usersManager->ajoutUsersBD($_POST["pseudo"],$_POST["email"],$_POST["password"]);
+        $this->usersManager->ajoutUsersBD($_POST["pseudo"],$_POST["email"],$_POST["passwordUsers"]);
 
         $_SESSION['alert']= [
             "type"=> "success",

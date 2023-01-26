@@ -1,28 +1,28 @@
 <?php
 
 class Users{
-    private $id;
-    private $role;
+    private $idUsers;
+    private $roleUsers;
     private $pseudo;
     private $email;
-    private $password;
+    private $passwordUsers;
     
 
-    public function __construct($id,$role,$pseudo,$email,$password)
+    public function __construct($idUsers,$roleUsers,$pseudo,$email,$passwordUsers)
     {
-        $this->id=$id;
-        $this->role=$role;
+        $this->idUsers=$idUsers;
+        $this->roleUsers=$roleUsers;
         $this->pseudo=$pseudo;
         $this->email=$email;
-        $this->password=$password;
+        $this->passwordUsers=$passwordUsers;
 
     }
 
-    public function getId(){return $this->id;}
-    public function setId($id){$this->id=$id;}
+    public function getIdUsers(){return $this->idUsers;}
+    public function setIdUsers($idUsers){$this->idUsers=$idUsers;}
 
-    public function getRole(){return $this->role;}
-    public function setRole($role){$this->role=$role;}
+    public function getRole(){return $this->roleUsers;}
+    public function setRole($roleUsers){$this->roleUsers=$roleUsers;}
 
     public function getPseudo(){return $this->pseudo;}
     public function setPseudo($pseudo){$this->pseudo=$pseudo;}
@@ -30,8 +30,8 @@ class Users{
     public function getEmail(){return $this->email;}
     public function setEmail($email){$this->email=$email;}
 
-    public function getPassword(){return $this->password;}
-    public function setPassword($password){$this->password=$password;}
+    public function getPassword(){return $this->passwordUsers;}
+    public function setPassword($passwordUsers){$this->passwordUsers=$passwordUsers;}
 
 }
 

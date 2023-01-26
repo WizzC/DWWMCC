@@ -7,10 +7,10 @@ ob_start()
 
  for($i=0;$i<count($anime);$i++): ?>
  <div class="container d-flex justify-content-center row m-0 w-25">
-    <img src="public/image/<?= $anime[$i]->getImage() ?>" >
+    <img src="public/image/<?= $anime[$i]->getImageAnime() ?>" >
     <div class=" p-0">
       <a class="rounded border border-dark p-2 mt-5 mb-5 text-center text-black d-flex justify-content-center" 
-      style="background-color: #BA5C12;" href="<?=URL ?>listeAnime/l/<?= $anime[$i]->getId() ?>"><?= $anime[$i]->getNom() ?></a>
+      style="background-color: #BA5C12;" href="<?=URL ?>listeAnime/l/<?= $anime[$i]->getIdAnime() ?>"><?= $anime[$i]->getNom() ?></a>
     </div>
  </div>
  <?php endfor ?>

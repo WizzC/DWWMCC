@@ -5,7 +5,7 @@ class ScanController {
 
     public function __construct(){
 
-        $this->scanManager=new scanManager;
+        $this->scanManager=new scanManager();
         $this->scanManager->chargementListeScan();
     }
     public function afficherListeScan(){
@@ -14,9 +14,12 @@ class ScanController {
         require __DIR__."\../views/scan.view.php";
         
     }
-    public function listeScan(){
-        $scan=$this->scanManager->getListeScan();
-        require __DIR__."\../views/afficherAnime.view.php";
+
+    public function afficherScanAnime(){
+        
+        return $this->scanManager->getListeScan();
+
+
     }
     public function afficherScan(){
         require __DIR__."\../views/scan.view.php";
@@ -52,7 +55,7 @@ class ScanController {
     }
     public function modificationScanValidation(){
 
-        $this->scanManager->modificationScanBD((int)$_POST['identifiant'],$_POST["saison"],$_POST["nomArc"],$_POST["chapitre"],$_POST["tomes"],$_POST["episodes"],$_POST["idAnime"]);
+        $this->scanManager->modificationScanBD((int)$_POST['identifiantScan'],$_POST["saison"],$_POST["nomArc"],$_POST["chapitre"],$_POST["tomes"],$_POST["episodes"],$_POST["idAnime"]);
         $_SESSION['alert']= [
             "type"=> "success",
             "msg"=> "Modification Réalisé"

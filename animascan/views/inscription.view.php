@@ -21,11 +21,11 @@ if(!empty($_POST)){
     else{
         $email = $_POST['email'] ;
     }
-    if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
-        $errors['password'] = "Vous devez rentrer un mot de passe valide";
+    if(empty($_POST['passwordUsers']) || $_POST['passwordUsers'] != $_POST['password_confirm']){
+        $errors['passwordUsers'] = "Vous devez rentrer un mot de passe valide";
     }
     else{
-        $password = $_POST['password'] ;
+        $password = $_POST['passwordUsers'] ;
     }
     
 
@@ -51,7 +51,7 @@ if(!empty($_POST)){
 <div class="form-group bg-white">
 
 <label for="password">Mot de passe</label>
-<input type="password" name="password" class="form-control" >
+<input type="password" name="passwordUsers" class="form-control" >
 </div>
 
 <div class="form-group bg-white" >

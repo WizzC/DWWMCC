@@ -9,7 +9,7 @@ class ScanManager extends Model{
         $this->listeScan[]=$scan;
     }
 
-    public function getListescan(){return $this->listeScan;}
+    public function getListeScan(){return $this->listeScan;}
     
     public function chargementListescan(){
         // appelle connexion à la bdd
@@ -24,18 +24,19 @@ class ScanManager extends Model{
 
         foreach($mesScan as $scan){
             // genere livre de la classe Livre
-            $l=new Scan($scan["id"],$scan["saison"],$scan["nomArc"],$scan["chapitre"],$scan["tomes"],$scan["episodes"],$scan["idAnime"]);
+            $l=new Scan($scan["idScan"],$scan["saison"],$scan["nomArc"],$scan["chapitre"],$scan["tomes"],$scan["episodes"],$scan["idAnime"]);
             $this->ajoutscan($l);
         }
     }
 
-    public function getscanById($id){
+    public function getScanById($id){
         for($i=0;$i<count($this->listeScan);$i++){
-            if($this->listeScan[$i]->getId() === $id){
+            if($this->listeScan[$i]->getIdAnime() == $id){
                 return $this->listeScan[$i];
             }
         }
     }
+
     public function ajoutScanBD($saison,$nomArc,$chapitre,$tomes,$episodes,$idAnime){
         $req=("INSERT INTO Scan SET saison = :saison,nomArc = :nomArc,chapitre = :chapitre,tomes = :tomes,episodes = :episodes,idAnime = :idAnime ");
 
@@ -51,10 +52,10 @@ class ScanManager extends Model{
     }
     public function suppressionScanBd($id){
         //  il est interdit de faire une concatenation avec $id, pour la securité
-        $req="DELETE from scan where id= :id";
+        $req="DELETE from scan where idScan= :idScan";
         // connexion à bd
         $stmt=$this->getBdd()->prepare($req);
-        $stmt->bindValue(":id",$id,PDO::PARAM_INT);
+        $stmt->bindValue(":idScan",$id,PDO::PARAM_INT);
         // sert à executer requete et a ajouter données à la bdd
         $resultat=$stmt->execute();
         // ferme connexion abdd
@@ -67,12 +68,12 @@ class ScanManager extends Model{
             unset($Scan);
         }
     }
-    public function modificationScanBD($id,$saison,$nomArc,$chapitre,$tomes,$episodes,$idAnime){
+    public function modificationScanBD($idScan,$saison,$nomArc,$chapitre,$tomes,$episodes,$idAnime){
         $req = "UPDATE scan
         set saison = :saison,nomArc = :nomArc,chapitre = :chapitre,tomes = :tomes,episodes = :episodes,idAnime = :idAnime
-        where id = :id";
+        where idScan = :idScan";
         $stmt = $this->getBdd()->prepare($req);
-        $stmt->bindValue(":id",$id,PDO::PARAM_INT);
+        $stmt->bindValue(":idScan",$idScan,PDO::PARAM_INT);
         $stmt->bindValue(":saison",$saison,PDO::PARAM_STR);
         $stmt->bindValue(":nomArc",$nomArc,PDO::PARAM_STR);
         $stmt->bindValue(":chapitre",$chapitre,PDO::PARAM_STR);
@@ -83,12 +84,12 @@ class ScanManager extends Model{
         $stmt->closeCursor();
 
         if($resultat>0){
-            $this->getScanById($id)->setSaison($saison);
-            $this->getScanById($id)->setNomArc($nomArc);
-            $this->getScanById($id)->setChapitre($chapitre);
-            $this->getScanById($id)->setTomes($tomes);
-            $this->getScanById($id)->setEpisodes($episodes);
-            $this->getScanById($id)->setIdAnime($idAnime);
+            $this->getScanById($idScan)->setSaison($saison);
+            $this->getScanById($idScan)->setNomArc($nomArc);
+            $this->getScanById($idScan)->setChapitre($chapitre);
+            $this->getScanById($idScan)->setTomes($tomes);
+            $this->getScanById($idScan)->setEpisodes($episodes);
+            $this->getScanById($idScan)->setIdAnime($idAnime);
             
         }
     }

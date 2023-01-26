@@ -35,7 +35,7 @@ ob_start()
     </div>
     
     
-    <input type="hidden" name="identifiant" value="<?=$scan->getId();?>">
+    <input type="hidden" name="identifiant" value="<?=$scan->getIdScan();?>">
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>
 
@@ -44,6 +44,6 @@ ob_start()
 $twitter = "public/image/Twitter.png";
 $instagram = "public/image/instagram.png";
 $content = ob_get_clean();
-$titre = "Modification du anime : ".$scan->getId();
+$titre = "Modification du anime : ".$scan->getIdScan();
 require "template.php";
 ?>

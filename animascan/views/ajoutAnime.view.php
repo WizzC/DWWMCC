@@ -12,7 +12,7 @@ ob_start()
     </div>
     <div class="form-group">
         <label for="date">date :</label>
-        <input type="date" class="form-control" id="date" name="date">
+        <input type="date" class="form-control" id="dateAnime" name="dateAnime">
     </div>
     <div class="form-group">
         <label for="auteur">auteur :</label>
@@ -20,11 +20,11 @@ ob_start()
     </div>
     <div class="form-group">
         <label for="description">description :</label>
-        <input type="text" class="form-control" id="description" name="description">
+        <input type="text" class="form-control" id="descriptionAnime" name="descriptionAnime">
     </div>
     <div class="form-group">
         <label for="image" class="form-label">Image :</label>
-        <input class="form-control-file" type="file" id="image" name="image">
+        <input class="form-control-file" type="file" id="imageAnime" name="imageAnime">
     </div>
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>

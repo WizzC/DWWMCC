@@ -11,7 +11,7 @@ ob_start()
     </div>
     <div class="form-group">
         <label for="date">date :</label>
-        <input type="date" class="form-control" id="date" name="date" value="<?= $anime->getDate()?>">
+        <input type="date" class="form-control" id="dateAnime" name="dateAnime" value="<?= $anime->getDateAnime()?>">
     </div>
     <div class="form-group">
         <label for="auteur">auteur :</label>
@@ -20,16 +20,16 @@ ob_start()
     </div>
     <div class="form-group">
         <label for="description">description :</label>
-        <input type="text" class="form-control" id="description" name="description" value="<?= $anime->getDescription()?>">
+        <input type="text" class="form-control" id="descriptionAnime" name="descriptionAnime" value="<?= $anime->getDescriptionAnime()?>">
         <!-- id sert pour js et css -->
     </div>
     <h3>Image : </h3>
-    <img src="<?= URL ?>public/image/<?=$anime->getImage()?>" >
+    <img src="<?= URL ?>public/image/<?=$anime->getImageAnime()?>" >
     <div class="form-group">
         <label for="image" class="form-label">Changer l'image :</label>
-        <input class="form-control-file" type="file" id="image" name="image">
+        <input class="form-control-file" type="file" id="imageAnime" name="imageAnime">
     </div>
-    <input type="hidden" name="identifiant" value="<?=$anime->getId();?>">
+    <input type="hidden" name="identifiant" value="<?=$anime->getIdAnime();?>">
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>
 
@@ -38,6 +38,6 @@ ob_start()
 $twitter = "public/image/Twitter.png";
 $instagram = "public/image/instagram.png";
 $content = ob_get_clean();
-$titre = "Modification du anime : ".$anime->getId();
+$titre = "Modification du anime : ".$anime->getIdAnime();
 require "template.php";
 ?>

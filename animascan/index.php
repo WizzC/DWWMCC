@@ -12,6 +12,7 @@ $usersController=new UsersController;
 
 require_once __DIR__."\controllers/scanController.php";
 $scanController=new ScanController;
+
 try{
     // si lutilisateur est nulle part dans url page accueil
     if(empty($_GET["page"])){
@@ -50,9 +51,12 @@ try{
                     
                 }else if($url[1]==="l"){
                     // afficher le anime concerner
-                    $animeController->afficherAnime((int)$url[2]);
                     
+                    $anime = $animeController->afficherAnime((int)$url[2]);
+                    $scan = $scanController->afficherScanAnime();
+                    require __DIR__."/views/afficherAnime.view.php";
                     
+                   
                     
                 }else if($url[1]==="a"){
                     $animeController->ajoutAnime();

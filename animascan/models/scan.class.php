@@ -1,6 +1,6 @@
 <?php
 class Scan{
-    private $id;
+    private $idScan;
     private $saison;
     private $nomArc;
     private $chapitre;
@@ -8,9 +8,9 @@ class Scan{
     private $episodes;
     private $idAnime;
 
-    public function __construct($id,$saison,$nomArc,$chapitre,$tomes,$episodes,$idAnime)
+    public function __construct($idScan,$saison,$nomArc,$chapitre,$tomes,$episodes,$idAnime)
     {
-        $this->id=$id;
+        $this->idScan=$idScan;
         $this->saison=$saison;
         $this->nomArc=$nomArc;
         $this->chapitre=$chapitre;
@@ -19,8 +19,8 @@ class Scan{
         $this->idAnime=$idAnime;
     }
 
-    public function getId(){return $this->id;}
-    public function setId($id){$this->id=$id;}
+    public function getIdScan(){return $this->idScan;}
+    public function setIdScan($idScan){$this->idScan=$idScan;}
 
     public function getSaison(){return $this->saison;}
     public function setSaison($saison){$this->saison=$saison;}

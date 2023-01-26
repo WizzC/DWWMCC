@@ -24,7 +24,7 @@ class UsersManager extends Model{
 
         foreach($mesUsers as $user){
             // genere livre de la classe Livre
-            $l=new Users($user["id"],$user["role"],$user["pseudo"],$user["email"],$user["password"]);
+            $l=new Users($user["idUsers"],$user["roleUsers"],$user["pseudo"],$user["email"],$user["passwordUsers"]);
             $this->ajoutUser($l);
         }
     }
@@ -36,13 +36,13 @@ class UsersManager extends Model{
             }
         }
     }
-    public function ajoutUsersBD($pseudo,$email,$password){
-        $req=("INSERT INTO users SET role = 1,pseudo = :pseudo,email = :email,password = :password ");
-        $password = password_hash($_POST['password'],PASSWORD_BCRYPT);
+    public function ajoutUsersBD($pseudo,$email,$passwordUsers){
+        $req=("INSERT INTO users SET roleUsers = 1,pseudo = :pseudo,email = :email,passwordUsers = :passwordUsers ");
+        $passwordUsers = password_hash($_POST['passwordUsers'],PASSWORD_BCRYPT);
         $stmt = $this->getBdd()->prepare($req);
         $stmt->bindValue(":pseudo",$pseudo,PDO::PARAM_STR);
         $stmt->bindValue(":email",$email,PDO::PARAM_STR);
-        $stmt->bindValue(":password",$password,PDO::PARAM_STR);
+        $stmt->bindValue(":passwordUsers",$passwordUsers,PDO::PARAM_STR);
         $resultat = $stmt->execute();
         $stmt->closeCursor();
     }
