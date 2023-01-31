@@ -1,39 +1,39 @@
 <?php
 class Anime{
-    private $id;
+    private $idAnime;
     private $nom;
-    private $date;
+    private $dateAnime;
     private $auteur;
-    private $description;
-    private $image;
+    private $descriptionAnime;
+    private $imageAnime;
 
-    public function __construct($id,$nom,$date,$auteur,$description,$image)
+    public function __construct($idAnime,$nom,$dateAnime,$auteur,$descriptionAnime,$imageAnime)
     {
-        $this->id=$id;
+        $this->idAnime=$idAnime;
         $this->nom=$nom;
-        $this->date=$date;
+        $this->dateAnime=$dateAnime;
         $this->auteur=$auteur;
-        $this->description=$description;
-        $this->image=$image;
+        $this->descriptionAnime=$descriptionAnime;
+        $this->imageAnime=$imageAnime;
     }
 
-    public function getId(){return $this->id;}
-    public function setId($id){$this->id=$id;}
+    public function getIdAnime(){return $this->idAnime;}
+    public function setIdAnime($idAnime){$this->idAnime=$idAnime;}
 
     public function getNom(){return $this->nom;}
     public function setNom($nom){$this->nom=$nom;}
 
-    public function getDate(){return $this->date;}
-    public function setDate($date){$this->date=$date;}
+    public function getDateAnime(){return $this->dateAnime;}
+    public function setDateAnime($dateAnime){$this->dateAnime=$dateAnime;}
 
     public function getAuteur(){return $this->auteur;}
     public function setAuteur($auteur){$this->auteur=$auteur;}
 
-    public function getDescription(){return $this->description;}
-    public function setDescription($description){$this->description=$description;}
+    public function getDescriptionAnime(){return $this->descriptionAnime;}
+    public function setDescriptionAnime($descriptionAnime){$this->descriptionAnime=$descriptionAnime;}
 
-    public function getImage(){return $this->image;}
-    public function setImage($image){$this->image=$image;}
+    public function getImageAnime(){return $this->imageAnime;}
+    public function setImageAnime($imageAnime){$this->imageAnime=$imageAnime;}
 }
 
 ?>

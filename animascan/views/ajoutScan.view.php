@@ -4,11 +4,9 @@ ob_start()
 ?>
 
 <form method="POST" action="<?= URL ?>listeScan/av" enctype="multipart/form-data">
-<!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
     <div class="form-group">
         <label for="saison">saison :</label>
         <input type="number" class="form-control" id="saison" name="saison">
-        <!-- id sert pour js et css -->
     </div>
     <div class="form-group">
         <label for="nomArc">nomArc :</label>

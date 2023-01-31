@@ -21,11 +21,11 @@ if(!empty($_POST)){
     else{
         $email = $_POST['email'] ;
     }
-    if(empty($_POST['password']) || $_POST['password'] != $_POST['password_confirm']){
-        $errors['password'] = "Vous devez rentrer un mot de passe valide";
+    if(empty($_POST['passwordUsers']) || $_POST['passwordUsers'] != $_POST['password_confirm']){
+        $errors['passwordUsers'] = "Vous devez rentrer un mot de passe valide";
     }
     else{
-        $password = $_POST['password'] ;
+        $password = $_POST['passwordUsers'] ;
     }
     
 
@@ -33,34 +33,35 @@ if(!empty($_POST)){
 
 }
 ?>
-<div class="d-flex justify-content-center "style="margin-bottom:40vh;"enctype="multipart/form-data">
-<form action="<?= URL ?>inscription/ic" method="POST">
+<div style="margin-bottom: 35 vh ;" class="d-flex justify-content-center"enctype="multipart/form-data"  >
+<form action="<?= URL ?>inscription/ic" style="background-color: #BA5C12;" class=" w-50" method="POST">
 
-<div class="form-group bg-white">
+<div class="form-group">
 
 <label for="pseudo">Pseudo</label>
 <input type="text" name="pseudo" class="form-control" >
 </div>
 
-<div class="form-group bg-white">
+<div class="form-group ">
 
 <label for="email">Email</label>
 <input type="text" name="email" class="form-control" >
 </div>
 
-<div class="form-group bg-white">
+<div class="form-group ">
 
 <label for="password">Mot de passe</label>
-<input type="password" name="password" class="form-control" >
+<input type="password" name="passwordUsers" class="form-control" >
 </div>
 
-<div class="form-group bg-white" >
+<div class="form-group " >
 
 <label for="password_confirm">Confirmez votre mot de passe</label>
 <input type="password" name="password_confirm" class="form-control" >
 </div>
+<div class="d-flex justify-content-center">
+  <button type="submit"  class="btn btn-dark ms-3 mb-3">M'inscrire</button></div>
 
-<button type="submit" class="btn btn-primary">M'inscrire</button>
 </form>
 </div>
 

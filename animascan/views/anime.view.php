@@ -16,22 +16,20 @@ endif;?>
         <th>Date de sortie</th>
         <th>Auteur</th>
         <th>description</th>
-        <!-- Permet d'avoir 2 colonnes en une -->
         <th colspan="2">Actions</th>
     </tr>
-    <!-- Va chercher dans la classe Livre, l'attribut livres (tableau des livres)  en faisant Livre::livres-->
+
     <?php 
     for($i=0;$i<count($anime);$i++): ?>
     <tr class="table-light">
-        <td class="align-middle"><img src="public/image/<?= $anime[$i]->getImage() ?>" width="100px"></td>
-        <td class="align-middle"><a href="<?=URL ?>listeAnime/l/<?= $anime[$i]->getId() ?>"><?= $anime[$i]->getNom() ?></td>
-        <td class="align-middle"><?= $anime[$i]-> getDate() ?></td>
+        <td class="align-middle"><img src="public/image/<?= $anime[$i]->getImageAnime() ?>" width="100px"></td>
+        <td class="align-middle"><a href="<?=URL ?>listeAnime/l/<?= $anime[$i]->getIdAnime() ?>"><?= $anime[$i]->getNom() ?></td>
+        <td class="align-middle"><?= $anime[$i]-> getDateAnime() ?></td>
         <td class="align-middle"><?= $anime[$i]-> getAuteur() ?></td>
-        <td class="align-middle" width="60%"><?= $anime[$i]->getDescription() ?></td>
-        <td class="align-middle"><a href="<?= URL ?>listeAnime/m/<?= $anime[$i]->getId() ?>" class="btn btn-warning">Modifier</a></td>
+        <td class="align-middle" width="60%"><?= $anime[$i]->getDescriptionAnime() ?></td>
+        <td class="align-middle"><a href="<?= URL ?>listeAnime/m/<?= $anime[$i]->getIdAnime() ?>" class="btn btn-warning">Modifier</a></td>
         <td class="align-middle"> 
-            <!-- onSubmit pour confirmer la suprresion -->
-            <form action="<?= URL ?>listeAnime/s/<?= $anime[$i]->getId() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le livre ?')" method="POST">
+            <form action="<?= URL ?>listeAnime/s/<?= $anime[$i]->getIdAnime() ?>" onSubmit="return confirm('Voulez-vous vraiment supprimer le livre ?')" method="POST">
                 <button class="btn btn-danger" type="submit">Supprimer</button>
             </form>
         </td>

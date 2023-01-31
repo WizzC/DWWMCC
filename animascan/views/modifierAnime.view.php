@@ -3,33 +3,33 @@ session_start();
 ob_start()
 ?>
 <form method="POST" action="<?= URL ?>listeAnime/mv" enctype="multipart/form-data">
-<!-- enctype="multipart/form-data" obliger de le mettre quand on charge un fichier -->
+
     <div class="form-group">
         <label for="nom">nom :</label>
         <input type="text" class="form-control" id="nom" name="nom" value="<?= $anime->getNom()?>">
-        <!-- id sert pour js et css -->
+
     </div>
     <div class="form-group">
         <label for="date">date :</label>
-        <input type="date" class="form-control" id="date" name="date" value="<?= $anime->getDate()?>">
+        <input type="date" class="form-control" id="dateAnime" name="dateAnime" value="<?= $anime->getDateAnime()?>">
     </div>
     <div class="form-group">
         <label for="auteur">auteur :</label>
         <input type="text" class="form-control" id="auteur" name="auteur" value="<?= $anime->getAuteur()?>">
-        <!-- id sert pour js et css -->
+
     </div>
     <div class="form-group">
         <label for="description">description :</label>
-        <input type="text" class="form-control" id="description" name="description" value="<?= $anime->getDescription()?>">
-        <!-- id sert pour js et css -->
+        <input type="text" class="form-control" id="descriptionAnime" name="descriptionAnime" value="<?= $anime->getDescriptionAnime()?>">
+
     </div>
     <h3>Image : </h3>
-    <img src="<?= URL ?>public/image/<?=$anime->getImage()?>" >
+    <img class="w-25" src="<?= URL ?>public/image/<?=$anime->getImageAnime()?>" >
     <div class="form-group">
         <label for="image" class="form-label">Changer l'image :</label>
-        <input class="form-control-file" type="file" id="image" name="image">
+        <input class="form-control-file" type="file" id="imageAnime" name="imageAnime">
     </div>
-    <input type="hidden" name="identifiant" value="<?=$anime->getId();?>">
+    <input type="hidden" name="identifiant" value="<?=$anime->getIdAnime();?>">
     <button type="submit" class="btn btn-primary">Valider</button>
 </form>
 
@@ -38,6 +38,6 @@ ob_start()
 $twitter = "public/image/Twitter.png";
 $instagram = "public/image/instagram.png";
 $content = ob_get_clean();
-$titre = "Modification du anime : ".$anime->getId();
+$titre = "Modification du anime : ".$anime->getIdAnime();
 require "template.php";
 ?>

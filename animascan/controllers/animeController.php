@@ -6,7 +6,7 @@ class AnimeController {
 
     public function __construct(){
 
-        $this->animeManager=new AnimeManager;
+        $this->animeManager=new AnimeManager();
         $this->animeManager->chargementListeAnime();
     }
     public function afficherListeAnime(){
@@ -15,10 +15,10 @@ class AnimeController {
         require __DIR__."\../views/anime.view.php";
         
     }
-    public function afficherAnime($id){
-        $animes=$this->animeManager->getListeAnime();
-        $anime=$this->animeManager->getAnimeById($id);
-        require __DIR__."\../views/afficherAnime.view.php";
+    public function afficherAnime($idAnime){
+   
+        return $this->animeManager->getAnimeById($idAnime);
+        
 
     }
 
@@ -34,12 +34,12 @@ class AnimeController {
 
     public function ajoutAnimeValidation(){
         // charge image
-        $file=$_FILES["image"];
+        $file=$_FILES["imageAnime"];
         // ajouter image au image public
         $repertoire="public/image/";
         $nomImageAjoute= $this->ajoutImage($file,$repertoire);
         // ajouter le Anime en bdd
-        $this->animeManager->ajoutAnimeBd($_POST["nom"],$_POST["date"],$_POST["auteur"],$_POST["description"],$nomImageAjoute);
+        $this->animeManager->ajoutAnimeBd($_POST["nom"],$_POST["dateAnime"],$_POST["auteur"],$_POST["descriptionAnime"],$nomImageAjoute);
 
         $_SESSION['alert']= [
             "type"=> "success",
@@ -84,12 +84,12 @@ class AnimeController {
         //  si functionne dit nom image qui a été ajouter
         else return ($random."_".$file['name']);
     }
-    public function suppressionAnime($id){
-        $nomImage= $this->animeManager->getAnimeById($id)->getImage();
+    public function suppressionAnime($idAnime){
+        $nomImage= $this->animeManager->getAnimeById($idAnime)->getImage();
         // retire l'image de mon dossier
         unlink("public/image/".$nomImage);
         // supprime ds bdd
-        $this->animeManager->suppressionAnimeBd($id);
+        $this->animeManager->suppressionAnimeBd($idAnime);
         $_SESSION['alert']= [
             "type"=> "success",
             "msg"=> "Supression Réalisé"
@@ -97,13 +97,13 @@ class AnimeController {
         // redirige lutilisateur vers la pages des Animes
         header("Location: ".URL."listeAnime");
     }
-    public function modificationAnime($id){
-        $anime=$this->animeManager->getAnimeById($id);
+    public function modificationAnime($idAnime){
+        $anime=$this->animeManager->getAnimeById($idAnime);
         require __DIR__."\../views/modifierAnime.view.php";
     }
     public function modificationAnimeValidation(){
-        $imageActuelle = $this->animeManager->getAnimeById((int)$_POST['identifiant'])->getImage();
-        $file = $_FILES['image'];
+        $imageActuelle = $this->animeManager->getAnimeById((int)$_POST['identifiant'])->getImageAnime();
+        $file = $_FILES['imageAnime'];
 
         if($file['size']>0){
             unlink("public/image/".$imageActuelle);
@@ -113,7 +113,7 @@ class AnimeController {
         else{
             $nomImageTooAdd = $imageActuelle;
         }
-        $this->animeManager->modificationAnimeBD((int)$_POST['identifiant'],$_POST["nom"],$_POST["date"],$_POST["auteur"],$_POST["description"],$nomImageTooAdd);
+        $this->animeManager->modificationAnimeBD((int)$_POST['identifiant'],$_POST["nom"],$_POST["dateAnime"],$_POST["auteur"],$_POST["descriptionAnime"],$nomImageTooAdd);
         $_SESSION['alert']= [
             "type"=> "success",
             "msg"=> "Modification Réalisé"
