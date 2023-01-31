@@ -110,10 +110,12 @@ class AnimeManager extends Model{
 
         if($resultat>0){
             $this->getAnimeById($idAnime)->setNom($nom);
+
             $this->getAnimeById($idAnime)->setdateAnime($dateAnime);
             $this->getAnimeById($idAnime)->setAuteur($auteur);
             $this->getAnimeById($idAnime)->setDescriptionAnime($descriptionAnime);
             $this->getAnimeById($idAnime)->setImageAnime($imageAnime);
+
         }
     }
 

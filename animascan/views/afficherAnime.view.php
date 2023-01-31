@@ -16,6 +16,36 @@ ob_start() ?>
       </figcaption>
     </figure>
   </div>
+</div> 
+<div class="d-flex justify-content-center">
+<table class="table text-center m-5" style="width: 50%;">
+<tr class="table-light">
+    <th>Saison</th>
+    <th>Nom de l'arc</th>
+    <th>Chapitre</th>
+    <th>Tomes</th>
+    <th>Episodes</th>
+
+    <!-- Permet d'avoir 2 colonnes en une -->
+
+</tr>
+<!-- Va chercher dans la classe scan, l'attribut scans (tableau des scans)  en faisant scan::scans-->
+<?php 
+for($i=0;$i<count($scan);$i++): 
+  if($scan[$i]->getidAnime()== $anime->getIdAnime()){
+?>
+  
+<tr class="table-light">
+    <td class="align-middle"><?= $scan[$i]->getSaison() ?></td>
+    <td class="align-middle"><?= $scan[$i]-> getNomArc() ?></td>
+    <td class="align-middle"><?= $scan[$i]-> getChapitre() ?></td>
+    <td class="align-middle"><?= $scan[$i]->getTomes() ?></td>
+    <td class="align-middle"><?= $scan[$i]->getEpisodes() ?></td>
+
+
+</tr>
+<?php } endfor ?>
+</table>
 </div>
 <div class="d-flex justify-content-center">
   <table class="table text-center m-5" style="width: 50%;">

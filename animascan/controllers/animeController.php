@@ -103,6 +103,8 @@ class AnimeController {
     }
     public function modificationAnimeValidation(){
         $imageActuelle = $this->animeManager->getAnimeById((int)$_POST['identifiant'])->getImageAnime();
+
+       
         $file = $_FILES['imageAnime'];
 
         if($file['size']>0){
@@ -113,7 +115,11 @@ class AnimeController {
         else{
             $nomImageTooAdd = $imageActuelle;
         }
+
         $this->animeManager->modificationAnimeBD((int)$_POST['identifiant'],$_POST["nom"],$_POST["dateAnime"],$_POST["auteur"],$_POST["descriptionAnime"],$nomImageTooAdd);
+
+
+
         $_SESSION['alert']= [
             "type"=> "success",
             "msg"=> "Modification Réalisé"

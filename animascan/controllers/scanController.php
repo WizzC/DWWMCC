@@ -55,7 +55,7 @@ class ScanController {
     }
     public function modificationScanValidation(){
 
-        $this->scanManager->modificationScanBD((int)$_POST['identifiant'],$_POST["saison"],$_POST["nomArc"],$_POST["chapitre"],$_POST["tomes"],$_POST["episodes"],$_POST["idAnime"]);
+        $this->scanManager->modificationScanBD((int)$_POST['identifiantScan'],$_POST["saison"],$_POST["nomArc"],$_POST["chapitre"],$_POST["tomes"],$_POST["episodes"],$_POST["idAnime"]);
         $_SESSION['alert']= [
             "type"=> "success",
             "msg"=> "Modification Réalisé"
