@@ -15,7 +15,7 @@
 
   <nav class="navbar navbar-expand-lg fs-3" style="background-color: #BA5C12;">
     <div class="container-fluid">
-      <a class="navbar-brand" aria-current="page"  href="<?= URL ?>accueil"><img src="public/image/logoAnimascan.png" ></a>
+      <a class="navbar-brand" aria-current="page"  href="<?= URL ?>accueil"><img src="/public/image/logoAnimascan.png" ></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -62,10 +62,10 @@
 
   <footer class="">
     <div class="d-flex justify-content-center  mt-5 p-1" style="background-color: #BA5C12;">
-      <a href="https://twitter.com/_Wizz_Fr">
-        <img src="public/image/Twitter.png" style="height: 50px;"></a>
-      <a href="https://www.instagram.com/clem.clr_/">
-        <img src="public/image/instagram.png" style="height: 50px;"></a>
+      <a href="/https://twitter.com/_Wizz_Fr">
+        <img src="/public/image/Twitter.png" style="height: 50px;"></a>
+      <a href="/https://www.instagram.com/clem.clr_/">
+        <img src="/public/image/instagram.png" style="height: 50px;"></a>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

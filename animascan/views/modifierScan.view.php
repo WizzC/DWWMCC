@@ -35,8 +35,7 @@ ob_start()
 
 
 <?php
-$twitter = "public/image/Twitter.png";
-$instagram = "public/image/instagram.png";
+
 $content = ob_get_clean();
 $titre = "Modification du anime : ".$scan->getIdScan();
 require "template.php";

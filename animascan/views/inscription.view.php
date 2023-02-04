@@ -45,7 +45,7 @@ if(!empty($_POST)){
 <div class="form-group ">
 
 <label for="email">Email</label>
-<input type="text" name="email" class="form-control" >
+<input type="email" name="email" class="form-control" >
 </div>
 
 <div class="form-group ">
