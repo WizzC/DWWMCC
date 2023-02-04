@@ -1,0 +1,62 @@
+1
+SELECT PrenomEtudiant, nomEtudiant , dateNaissanceEtudiant
+FROM etudiants
+WHERE dateNaissanceEtudiant < (SELECT dateNaissanceEtudiant FROM etudiants WHERE PrenomEtudiant = 'JULES' AND nomEtudiant = 'LECLERCQ');
+
+2
+SELECT e.nomEtudiant, e.prenomEtudiant, an.note
+FROM etudiants e
+INNER JOIN avoir_note an ON e.idEtudiant = an.idEtudiant
+WHERE an.idEpreuve = 4
+AND an.note > (
+  SELECT AVG(an2.note)
+  FROM avoir_note an2
+  WHERE an2.idEpreuve = 4
+)
+3
+SELECT e.nomEtudiant, e.prenomEtudiant, an.note
+FROM etudiants e
+INNER JOIN avoir_note an ON e.idEtudiant = an.idEtudiant
+WHERE an.note >= 12
+4
+SELECT e.nomEtudiant, e.prenomEtudiant, an.note
+FROM etudiants e
+INNER JOIN avoir_note an ON e.idEtudiant = an.idEtudiant
+WHERE an.idEpreuve = 4 AND an.note > (
+SELECT an2.note
+FROM etudiants e2 
+INNER JOIN avoir_note an2 ON e2.idEtudiant = an2.idEtudiant
+WHERE e2.nomEtudiant = 'dupont' AND e2.prenomEtudiant ='luc' AND an2.idEpreuve=4)
+5
+SELECT e.nomEtudiant, e.prenomEtudiant, an.note
+FROM etudiants e
+INNER JOIN avoir_note an ON e.idEtudiant = an.idEtudiant
+WHERE an.note IN (
+  SELECT an2.note
+  FROM etudiants e2 
+  INNER JOIN avoir_note an2 ON e2.idEtudiant = an2.idEtudiant
+  WHERE e2.nomEtudiant = 'dupont' AND e2.prenomEtudiant ='luc' 
+)
+6
+ALTER TABLE etudiants 
+ADD COLUMN hobby VARCHAR(20) DEFAULT 'sport';
+7
+ALTER TABLE etudiants
+ADD COLUMN NEWCOL INTEGER;
+
+DESCRIBE etudiants;
+
+ALTER TABLE etudiants
+DROP COLUMN NEWCOL;
+
+DESCRIBE etudiants;
+8
+UPDATE avoir_note an
+INNER JOIN etudiants e ON an.idEtudiant = e.idEtudiant
+INNER JOIN epreuves epr ON  an.idEpreuve = epr.idEpreuve
+SET an.note = an.note - 3
+WHERE e.nomEtudiant = 'MARKE' AND epr.idMatiereEpreuve = (
+SELECT idMatiere
+FROM matieres 
+WHERE nomMatiere = 'BD');
+9
