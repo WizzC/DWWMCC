@@ -32,7 +32,6 @@ const france = [
     {nom: "Hauts-de-France",population: 6005000,superficie: 31813,longitude: `49°55'14' Nord`,latitude: `2° 42' 11' Est`,departements: `Nord (59) - Aisne (02) - Oise (60) - Pas de Calais (62) - Somme (80)`,},
     {nom: "Normandie",population: 600500,superficie: 31813,longitude: `49°55'14' Nord`,latitude: `2° 42' 11' Est `,departements: `Nord (59) - Aisne (02) - Oise (60) - Pas de Calais (62) - Somme (80)`,},
     {nom: "Pays de la Loire",population: 600500,superficie: 31813,longitude: `49°55'14' Nord`,latitude: `2° 42' 11' Est `,departements: `Nord (59) - Aisne (02) - Oise (60) - Pas de Calais (62) - Somme (80)`,},
-    {nom: "Provence-Alpes-Côte d'Azur",population: 600500,superficie: 31813,longitude: `49°55'14' Nord`,latitude: `2° 42' 11' Est `,departements: `Nord (59) - Aisne (02) - Oise (60) - Pas de Calais (62) - Somme (80)`,},
     {nom: "Provence-Alpes-Côte d'Azur",population: 600500,superficie: 31813,longitude: `49°55'14' Nord`,latitude: `2° 42' 11' Est `,departements: `Nord (59) - Aisne (02) - Oise (60) - Pas de Calais (62) - Somme (80)`},
 ]
 
