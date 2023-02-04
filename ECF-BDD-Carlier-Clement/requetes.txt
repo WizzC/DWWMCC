@@ -60,3 +60,9 @@ SELECT idMatiere
 FROM matieres 
 WHERE nomMatiere = 'BD');
 9
+INSERT INTO avoir_note (idEtudiant, idEpreuve, note)
+VALUES (
+  (SELECT e.idEtudiant FROM etudiants e WHERE e.nomEtudiant = 'dewa'), 
+  4, 
+  (SELECT AVG(an.note) FROM avoir_note an WHERE an.idEpreuve = 4) * 0.9
+);
