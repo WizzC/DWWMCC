@@ -48,7 +48,7 @@ path:hover.FR-COR  {
     transition: fill 0.8s;
 }
 path:hover.FR-IDF  {
-    fill: rgb(0, 145, 255);
+    fill: rgb(30, 39, 46);
     stroke: aliceblue;
     transition: fill 0.8s;
 }
@@ -84,7 +84,7 @@ path:hover.FR-PAC  {
 .infos{
     font-size: 30px;
     padding-top: 200px;
-    color: rgb(127, 9, 217);
+    color: rgb(9, 175, 217);
     width: 1500px;
     height: 100px;
 }

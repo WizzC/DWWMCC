@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>QUIZZ POKEMON</h1>
+    </header>
+    <div id="0">
+        <h2>Quel pokemon fait parti de la premiere génération ?</h2>
+
+       <p><input type="radio" name="Q1" value="A">  Tiplouf </p><br>
+         <p><input type="radio" name="Q1" value="B"> Insecateur</p> <br>
+       <p><input type="radio" name="Q1" value="C">  Nostenfer</p> <br>
+
+    </div>
+    <div id="1">
+        <h2>Quel est le legendaire ?</h2>
+
+       <p> <input type="radio" name="Q2" value="A">  Jirachi</p> <br>
+        <p><input type="radio" name="Q2" value="B">  Groudon</p> <br>
+        <p><input type="radio" name="Q2" value="C"> Pikachu</p> <br>
+    </div>
+    <div id="2">
+        <h2>Quel est ce pokemon ?</h2>
+        <img src="image/pokemon.png" >
+
+        <p><input type="radio" name="Q3" value="A">  Carapuce </p><br>
+        <p><input type="radio" name="Q3" value="B">  Salameche </p><br>
+        <p><input type="radio" name="Q3" value="C">  Bulbizar </p><br>
+
+    </div>
+    <div id="3">
+        <h2>Quel est le premier jeu sorti?</h2>
+
+        <p><input type="radio" name="Q4" value="A">  Jaune </p><br>
+        <p><input type="radio" name="Q4" value="B">  Diamant</p> <br>
+        <p><input type="radio" name="Q4" value="C">  Perle</p> <br>
+    
+    </div>
+    <div id="4">
+        <h2>Quel est le createur de pokemon ?</h2>
+
+        <p><input type="radio" name="Q5" value="A">  Satoshi Tajiri</p>  <br>
+        <p><input type="radio" name="Q5" value="B">  Fusajirō Yamauchi</p> <br>
+        <p><input type="radio" name="Q5" value="C">  Eiichirō Oda </p><br>
+    </div>
+    
+    <input type="button" value="Valider" class="bouton" onclick="pokemon()" >
+    <input type="button" value="reset" class="btn" >
+
+    <div class="result" id="result"></div>
+    <script src="scripte.js"></script>
+</body>
+</html>
