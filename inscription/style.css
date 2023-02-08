@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: gray;
+    padding: 25px;
+}
+.grandeDiv{
+    text-align: center;
+    margin: 0 auto;
+    background-color: cornflowerblue;
+    color: aliceblue;
+    width: 40vh;
+    display: block;
+    align-items: center;
+    padding: 20px;
+}
+p{
+    margin: 0 auto;
+}
