@@ -1,0 +1,81 @@
+
+
+DROP TABLE IF EXISTS film ;
+CREATE TABLE film (idFilm int AUTO_INCREMENT NOT NULL,
+nomFilm VARCHAR(25),
+imageFilm VARCHAR(250),
+dateDeSortie DATE,
+dur�e TIME,
+dateEnLigne DATE,
+idRealisateur INT,
+idGenre INT,
+idLocation INT,
+PRIMARY KEY (idFilm) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS realisateur ;
+CREATE TABLE realisateur (idRealisateur int AUTO_INCREMENT NOT NULL,
+prenomRealisateur VARCHAR(25),
+nomRealisateur VARCHAR(25),
+PRIMARY KEY (idRealisateur) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS acteur ;
+CREATE TABLE acteur (idActeur int AUTO_INCREMENT NOT NULL,
+nomActeur VARCHAR(25),
+prenomActeur VARCHAR(25),
+PRIMARY KEY (idActeur) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS users ;
+CREATE TABLE users (idUsers int AUTO_INCREMENT NOT NULL,
+pseudo VARCHAR(25),
+email VARCHAR(250),
+motDePasse VARCHAR(250),
+PRIMARY KEY (idUsers) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS type ;
+CREATE TABLE type (idType int AUTO_INCREMENT NOT NULL,
+type VARCHAR(25),
+PRIMARY KEY (idType) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS genre ;
+CREATE TABLE genre (idGenre int AUTO_INCREMENT NOT NULL,
+PRIMARY KEY (idGenre) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS location ;
+CREATE TABLE location (idLocation int AUTO_INCREMENT NOT NULL,
+debut DATE,
+fin DATE,
+idType INT,
+PRIMARY KEY (idLocation) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS tarif ;
+CREATE TABLE tarif (idTarif int AUTO_INCREMENT NOT NULL,
+prix INT,
+nbLocation INT,
+PRIMARY KEY (idTarif) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS jouer ;
+CREATE TABLE jouer (idFilm int AUTO_INCREMENT NOT NULL,
+idActeur INT NOT NULL,
+PRIMARY KEY (idFilm,
+ idActeur) ) ENGINE=InnoDB;
+
+DROP TABLE IF EXISTS louer ;
+CREATE TABLE louer (idUsers int AUTO_INCREMENT NOT NULL,
+idLocation INT NOT NULL,
+idTarif INT NOT NULL,
+quantite INT,
+prixP INT,
+PRIMARY KEY (idUsers,
+ idLocation,
+ idTarif) ) ENGINE=InnoDB;
+
+ALTER TABLE film ADD CONSTRAINT FK_film_idRealisateur FOREIGN KEY (idRealisateur) REFERENCES realisateur (idRealisateur);
+
+ALTER TABLE film ADD CONSTRAINT FK_film_idGenre FOREIGN KEY (idGenre) REFERENCES genre (idGenre);
+ALTER TABLE film ADD CONSTRAINT FK_film_idLocation FOREIGN KEY (idLocation) REFERENCES location (idLocation);
+ALTER TABLE location ADD CONSTRAINT FK_location_idType FOREIGN KEY (idType) REFERENCES type (idType);
+ALTER TABLE jouer ADD CONSTRAINT FK_jouer_idFilm FOREIGN KEY (idFilm) REFERENCES film (idFilm);
+ALTER TABLE jouer ADD CONSTRAINT FK_jouer_idActeur FOREIGN KEY (idActeur) REFERENCES acteur (idActeur);
+ALTER TABLE louer ADD CONSTRAINT FK_louer_idUsers FOREIGN KEY (idUsers) REFERENCES users (idUsers);
+ALTER TABLE louer ADD CONSTRAINT FK_louer_idLocation FOREIGN KEY (idLocation) REFERENCES location (idLocation);
+ALTER TABLE louer ADD CONSTRAINT FK_louer_idTarif FOREIGN KEY (idTarif) REFERENCES tarif (idTarif);
