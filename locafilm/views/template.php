@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js">
 </head>
 <body style="background-color: gray;">
-<nav class="navbar navbar-expand-lg bg-dark ">
+<nav class="bg-dark navbar navbar-expand-lg  ">
   <div class="container-fluid">
-    <a class="navbar-brand text-light" href="#">Accueil</a>
+    <a class="navbar-brand text-light" href="/index.php">Accueil</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,7 +19,7 @@
       <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Link
+            GENRE
           </a>
           <ul class="dropdown-menu text-light" style="background-color: gray;">
             <li><a class="dropdown-item" style="color:white" href="#">Action</a></li>
