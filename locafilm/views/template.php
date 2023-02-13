@@ -11,7 +11,7 @@
 <body style="background-color: gray;">
 <nav class="bg-dark navbar navbar-expand-lg  ">
   <div class="container-fluid">
-    <a class="navbar-brand text-light" href="/index.php">Accueil</a>
+    <a class="navbar-brand text-light" href="<?= URL ?>accueil">Accueil</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,6 +28,9 @@
         </li>
        
       </ul>
+      <li class="nav-item ">
+              <a class="navbar-brand text-light" aria-current="page" href="<?= URL ?>inscription">Inscription</a>
+            </li>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
         <button class="btn btn-outline-light" type="submit">Recherche</button>
